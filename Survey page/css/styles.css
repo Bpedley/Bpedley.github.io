@@ -1,11 +1,17 @@
 /* Page structure */
 
-body, 
-html {
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
   background-color: rgb(204, 242, 255);
   font-family: "Niramit", sans-serif;
   text-align: center;
   min-width: 320px;
+  line-height: 1.7;
 }
 
 

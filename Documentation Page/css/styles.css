@@ -2,12 +2,12 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	color: #333333;
 }
 
 body {
 	font-family: 'Niramit', sans-serif;
-	line-height: 1.5em;
+  line-height: 1.5;
+  color: #333333;
 }
 
 nav {

@@ -1,38 +1,29 @@
 <html>
-
   <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <link href="https://fonts.googleapis.com/css?family=Niramit" rel="stylesheet">
-    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
-    <title>Survey</title>
+    <title>Survey Page</title>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
   </head>
-  
   <body>
     <h1 id="title">Survey Form</h1>
-
     <div class="form-outer">
-      
       <p id="description">Let us know how we can improve freeCodeCamp<p>
-
       <form id="survey-form" action="" method="">
-
         <div class="row">
           <label for="name" id="name-label" class="left-side">* Name:</label>
           <input type="text" name="name" id="name" class="right-side input-field" placeholder="Enter your name" required>
         </div>
-
         <div class="row">
           <label for="email" id="email-label" class="left-side">* Email:</label>
           <input type="email" name="email" id="email" class="right-side input-field" placeholder="Enter your email" required>
         </div>
-        
         <div class="row">
           <label for="number" id="number-label" class="left-side">* Age:</label>
           <input type="number" name="number" id="number" class="right-side input-field" placeholder="Age" min="1" max="125" required>
         </div>
-
         <div class="row">
           <label for="number" class="left-side">Which option best describes your current role?</label>
             <select id="dropdown" class="right-side dropdown">
@@ -43,8 +34,7 @@
               <option value="Prefer not to say">Prefer not to say</option>
               <option value="Other">Other</option>
             </select>
-        </div>
-        
+        </div> 
         <div class="row">
           <label for="userRatings" class="left-side">* How likely is that you would recommend freeCodeCamp to a friend?</label>
             <div class="right-side recommendation">
@@ -53,7 +43,6 @@
               <input type="radio" name="recommend" value="3" class="userRatings">Not sure
             </div>
         </div>
-
         <div class="row">
           <label for="most-like" class="left-side">What do you like most in FCC:</label>
             <select name="mostLike" id="most-like" class="right-side dropdown">
@@ -63,8 +52,7 @@
               <option value="Community">Community</option>
               <option value="Open Source">Open Source</option>
             </select>
-        </div>
-        
+        </div>     
         <div class="row">
           <label for="preferences" class="left-side">Things that should be improved in the future (Check all that apply):</label>
             <div class="right-side" id="preferences">
@@ -80,23 +68,17 @@
               <input type="checkbox" name="things" value="10">Forum<br>
               <input type="checkbox" name="things" value="11">Additional Courses
             </div>
-        </div>
-        
+        </div>    
         <div class="row">
           <label for="text" class="left-side">Any Comments or Suggestions?</label>
           <div class="right-side">
             <textarea name="text" id="text">Enter your comment here...</textarea>
           </div>
-        </div>
-        
+        </div>    
         <div>
           <button type="submit" id="submit">Submit</button>
         </div>
-
       </form>
-
-    </div>
-    
+    </div> 
   </body>
-
 </html>
