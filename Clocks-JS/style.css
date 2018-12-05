@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("img/pattern.png");
+  text-align: center;
+}
+
+.main {
+  background-color: rgb(182, 182, 182);
+  border: 2px solid black;
+  border-radius: 15px;
+  width: 350px;
+  height: 160px;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 5%;
+}
+
+.clock-head {
+  background-color: brown;
+  color: white;
+  border: 2px solid black;
+  border-radius: 15px;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  font-weight: bold;
+  position: absolute;
+  left: 35%;
+  top: -18%;
+  padding: 10px 25px;
+}
+
+.time {
+  background-color: rgb(214, 214, 214);
+  width: 300px;
+  height: 100px;
+  margin: 30px auto;
+  font-size: 41px;
+  font-family: 'Orbitron', sans-serif;
+  padding: 23px 10px;
+  border-radius: 5px;
+  line-break: initial;
+}
