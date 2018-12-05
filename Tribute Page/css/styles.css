@@ -1,22 +1,40 @@
-/* Structure */
+/* Basic structure */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-html,
 body {
-  font-family: 'Ubuntu', sans-serif;
   text-align: center;
+  font-family: sans-serif;
+  line-height: 1.6em;
 }
 
 #main {
-  background: #DCDCDC;
-  margin: 10px auto;
-  padding: 10px 5px;
-  border-radius: 5px;
+  background: rgb(230, 230, 230);
+  margin: 15px 15px;
+  border-radius: 25px;
 }
 
 
+/* Header */
+
+header {
+  padding: 25px 0;
+}
+
+#title {
+  margin-bottom: 20px;
+}
+
+header p {
+  font-size: 1.2em;
+}
+
 /* Image */
 
-#img-div {
+#img {
   background: white;
 }
 
@@ -28,7 +46,6 @@ body {
 
 #img-caption {
   padding: 20px 15px;
-  text-align: justify;
 }
 
 
@@ -36,32 +53,39 @@ body {
 
 #tribute-info {
   margin: 0 auto;
-  padding-right: 35px;
+  padding: 20px; 
 }
 
-#tribute-info li {
-  margin: 15px auto;
-  text-align: justify;
+#headline {
+  padding-bottom: 10px;
+  text-align: center;
 }
 
 ul {
   list-style-type: circle;
   max-width: 600px;
   margin: 0 auto;
+  text-align: justify;
+  list-style: inside;
+}
+
+ul li {
+  margin: 0;
 }
 
 blockquote {
   font-style: italic;
+  padding: 20px;
 }
 
 /* Footer */
 
 footer {
-  padding: 5px 10px;
+  display: inline-block;
+  padding: 15px 20px;
   background-color: rgb(240, 245, 245);
   border-radius: 15px;
-  width: 75%;
-  margin: 0 auto;
+  margin: 0 25px 25px;
 }
 
 footer a {
