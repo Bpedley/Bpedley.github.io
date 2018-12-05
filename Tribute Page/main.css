@@ -1,0 +1,74 @@
+/* Structure */
+
+html,
+body {
+  font-family: 'Ubuntu', sans-serif;
+  text-align: center;
+}
+
+#main {
+  background: #DCDCDC;
+  margin: 10px auto;
+  padding: 10px 5px;
+  border-radius: 5px;
+}
+
+
+/* Image */
+
+#img-div {
+  background: white;
+}
+
+#image {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+#img-caption {
+  padding: 20px 15px;
+  text-align: justify;
+}
+
+
+/* Main content */
+
+#tribute-info {
+  margin: 0 auto;
+  padding-right: 35px;
+}
+
+#tribute-info li {
+  margin: 15px auto;
+  text-align: justify;
+}
+
+ul {
+  list-style-type: circle;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+blockquote {
+  font-style: italic;
+}
+
+/* Footer */
+
+footer {
+  padding: 5px 10px;
+  background-color: rgb(240, 245, 245);
+  border-radius: 15px;
+  width: 75%;
+  margin: 0 auto;
+}
+
+footer a {
+  text-decoration: none;
+  color: rgb(0, 102, 128);
+}
+
+footer a:hover {
+  color: rgb(255, 102, 102);
+}
