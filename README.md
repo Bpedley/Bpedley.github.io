@@ -6,4 +6,5 @@
 - Personal Portfolio Webpage #
 
 **Other projects:**
-- Digital clock https://bpedley.github.io/Clocks-JS/
+- Digital clock https://bpedley.github.io/Other%20projects/Clocks-JS/
+- Temperature app https://bpedley.github.io/Other%20projects/Temperature%20app/
