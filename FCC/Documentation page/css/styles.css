@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
+
 * {
 	margin: 0;
 	padding: 0;
@@ -5,51 +7,45 @@
 }
 
 body {
-	font-family: 'Niramit', sans-serif;
-  line-height: 1.5;
-  color: #333333;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.6;
 }
 
 nav {
 	display: flex;
 	flex-direction: column;
-	position: fixed;
-	height: 100%;
+  height: 100%;
+  max-width: 300px;
+  width: 100%;
+  position: fixed;
 	left: 0;
 	top: 0;
-	max-width: 300px;
-	width: 100%;
-	background-color: white;
 	border-right: 2px solid black;
-}
-
-a {
-  display: block;
 }
 
 nav header {
 	text-align: center;
 	margin: 5px;
 	font-size: 1.8em;
-	color: black;
 }
 
 nav a {
+  display: block;
+  width: 100%;
+  padding: 5px 5px 5px 35px;
 	text-decoration: none;
-	color: black;
+  color: black;
+  font-size: 1.1em;
 }
 
 nav ul li {
 	list-style-type: none;
-	padding: 5px;
-	padding-left: 35px;
 	border-top: 1px solid black;
-	font-size: 1.1em;
 }
 
 main {
-	margin-left: 330px;
-	margin-bottom: 150px;
+	margin-left: 320px;
+	margin-bottom: 200px;
 	padding: 20px;
 }
 
@@ -58,4 +54,49 @@ main {
 	display: block;
 	padding: 15px 30px;
 	margin-left: 10px;
+}
+
+main p,
+main li,
+main h2,
+.code {
+  margin-bottom: 15px;
+  margin-right: 25px;
+}
+
+main p,
+main ul {
+  margin-left: 15px;
+}
+
+main ul {
+  list-style-position: inside;
+  margin-left: 35px;
+}
+
+.subheading {
+  font-weight: bold;
+}
+
+.code {
+  line-height: 2;
+  margin-right: 25px;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 815px) {
+  nav {
+    max-width: 100vw;
+    height: 295px;
+    border: none;
+    position: relative;
+  }
+  nav ul {
+    overflow: auto;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+  }
+  main {
+    margin-left: 10px;
+  }
 }

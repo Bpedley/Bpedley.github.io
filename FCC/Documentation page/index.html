@@ -45,16 +45,16 @@
 			<article class="main-section" id="display-property">
 				<h2>The "display" property</h2>
 				<p>display is CSS's most important property for controlling layout. Every element has a default display value depending on what type of element it is. The default for most elements is usually block or inline. A block element is often called a block-level element. An inline element is always just called an inline element.</p>
-				<p class="">block</p>
+				<p class="subheading">block</p>
 				<p>div is the standard block-level element. A block-level element starts on a new line and stretches out to the left and right as far as it can. Other common block-level elements are p and form, and new in HTML5 are header, footer, section, and more.</p>
-				<p class="">inline</p>
+				<p class="subheading">inline</p>
 				<p>span is the standard inline element. An inline element can wrap some text inside a paragraph <span> like this </span> without disrupting the flow of that paragraph. The a element is the most common inline element, since you use them for links.</p>
-				<p class="">none</p>
+				<p class="subheading">none</p>
 				<p>Another common display value is none. Some specialized elements such as script use this as their default. It is commonly used with JavaScript to hide and show elements without really deleting and recreating them.</p>
 				<p>This is different from visibility. Setting display to none will render the page as though the element does not exist. visibility: hidden; will hide the element, but the element will still take up the space it would if it was fully visible.</p>
-				<p class="">other display values</p>
+				<p class="subheading">other display values</p>
 				<p>There are plenty of more exotic display values, such as list-item and table. Here is an exhaustive list. We'll discuss inline-block and flex later on.</p>
-				<p class="">extra credit</p>
+				<p class="subheading">extra credit</p>
 				<p>As I mentioned, every element has a default display type. However, you can always override this! Though it wouldn't make sense to make an inline div, you can use this to customize the display of elements that have particular semantics. A common example is making inline li elements for horizontal menus.</p>
 			</article>
 
@@ -127,12 +127,12 @@
       <article class="main-section" id="position">
         <h2>position</h2>
         <p>In order to make more complex layouts, we need to discuss the position property. It has a bunch of possible values, and their names make no sense and are impossible to remember. Let's go through them one by one, but maybe you should bookmark this page too.</p>
-        <p class="">static</p>
+        <p class="subheading">static</p>
         <pre class="code">.static {
   position: static;
 }				</pre>
         <p>static is the default value. An element with position: static; is not positioned in any special way. A static element is said to be not positioned and an element with its position set to anything else is said to be positioned.</p>
-        <p class="">relative</p>
+        <p class="subheading">relative</p>
         <pre class="code">.relative1 {
   position: relative;
 }
@@ -145,7 +145,7 @@
 }				</pre>
         <p>relative behaves the same as static unless you add some extra properties.</p>
         <p>Setting the top, right, bottom, and left properties of a relatively-positioned element will cause it to be adjusted away from its normal position. Other content will not be adjusted to fit into any gap left by the element.</p>
-        <p class="">fixed</p>
+        <p class="subheading">fixed</p>
         <p>A fixed element is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled. As with relative, the top, right, bottom, and left properties are used.</p>
         <p>I'm sure you've noticed that fixed element in the lower-right hand corner of the page. I'm giving you permission to pay attention to it now. Here is the CSS that puts it there:</p>
         <pre class="code">.fixed {
@@ -157,7 +157,7 @@
 }				</pre>
         <p>A fixed element does not leave a gap in the page where it would normally have been located.</p>
         <p>Mobile browsers have surprisingly shaky support for fixed. Learn more about the situation here.</p>
-        <p class="">absolute</p>
+        <p class="subheading">absolute</p>
         <p>absolute is the trickiest position value. absolute behaves like fixed except relative to the nearest positioned ancestor instead of relative to the viewport. If an absolutely-positioned element has no positioned ancestors, it uses the document body, and still moves along with page scrolling. Remember, a "positioned" element is one whose position is anything except static.</p>
         <p>Here is a simple example:</p>
         <pre class="code">.relative {
@@ -182,7 +182,6 @@
   float: right;
   margin: 0 0 1em 1em;
 }				</pre>
-        <img src="images/c7tN3rG.png" alt="float layout">
       </article>
 
       <article class="main-section" id="percent-width">
@@ -192,7 +191,6 @@
   float: right;
   width: 50%;
 }				</pre>
-        <img src="images/Z19pRBS.png" alt="">
       </article>
 
       <article class="main-section" id="media-queries">
@@ -219,7 +217,7 @@
       <article class="main-section" id="inline-block">
         <h2>inline-block</h2>
         <p>You can create a grid of boxes that fills the browser width and wraps nicely. This has been possible for a long time using float, but now with inline-block it's even easier. inline-block elements are like inline elements but they can have a width and height. Let's look at examples of both approaches.</p>
-        <p class="">The Hard Way (using float)</p>
+        <p class="subheading">The Hard Way (using float)</p>
         <pre class="code">.box {
   float: left;
   width: 200px;
@@ -229,7 +227,7 @@
 .after-box {
   clear: left;
 }				</pre>
-        <p class="">The Easy Way (using inline-block)</p>
+        <p class="subheading">The Easy Way (using inline-block)</p>
         <p>You can achieve the same effect using the inline-block value of the display property.</p>
         <pre class="code">.box2 {
   display: inline-block;
@@ -280,7 +278,7 @@
 				<p>The new flexbox layout mode is poised to redefine how we do layouts in CSS. Unfortunately the specification has changed a lot recently, so it's implemented differently in different browsers. Still, I'd like to share a couple examples so you know what's coming up. These examples currently only work some browsers that use the latest version of the standard.</p>
 				<p>There are a lot of out-of-date flexbox resources around. If you want to learn more about flexbox, start here to learn how to identify if a resource is current or not. I have written a detailed article using the latest syntax.</p>
 				<p>There is a lot more you can do with flexbox; these are just a few examples to give you an idea:</p>
-				<p class="">Simple Layout using Flexbox</p>
+				<p class="subheading">Simple Layout using Flexbox</p>
 				<pre class="code">.container {
   display: -webkit-flex;
   display: flex;
