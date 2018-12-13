@@ -1,0 +1,27 @@
+/* Mixins */
+@mixin backImage($height) {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(
+    $gradient, 
+    $gradient
+  ), url("../img/bg-masthead.jpg");
+  background-position: center;
+  height: $height;
+}
+
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin featured-image($img) {
+  background: url($img);
+  background-size: cover;
+}

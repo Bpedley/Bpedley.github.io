@@ -1,0 +1,426 @@
+/* Import */
+@import "_normalize";
+@import "_variables";
+@import "_mixins";
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400');
+
+
+/* Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1140px;
+  width: 100%;
+  text-align: center;
+}
+
+.container,
+.row {
+  @include clearfix;
+}
+
+.col1-3 {
+  float: left;
+  width: 33.33%;
+}
+
+.col1-2 {
+  float: left;
+  width: 50%;
+  height: 488px;
+  @media screen and (max-width: 990px) {
+    width: 100%;
+  }
+}
+
+/* Typography */
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h5 {
+  line-height: 1.2;
+}
+
+h1 {
+  color: $color-white;
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.75em;
+}
+
+h5 {
+  font-size: 1.25em;
+}
+
+p {
+  font-size: 1.25em;
+  font-weight: 300;
+}
+
+.logo,
+input,
+.form button {
+  font-size: 1.25em;
+  line-height: 1.5;
+}
+
+
+/* Navigation bar */
+nav {
+  a {
+    float: left;
+    margin: 12px 0 12px 15px;
+    text-decoration: none;
+    color: $color-black;
+  }
+
+  .sign-in {
+    @extend button;
+    float: right;
+    margin-top: 7px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    a {
+      margin-left: 10vw;
+    }
+    .sign-in {
+      margin-right: 10vw;
+    }
+  }
+}
+
+button {
+  padding: 8px 15px;
+  line-height: 24px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  background-color: $color-lightblue;
+  color: $color-white;
+  cursor: pointer;
+  &:hover {
+    transition: .5s;
+    background-color: $color-blue;
+  }
+}
+
+
+/* Header */
+header {
+  h1 {
+    margin: 0 5vw 50px;
+    @media screen and (max-width: 768px) {
+      font-size: 2em;
+    }
+  }
+
+  @include backImage(595px);
+
+  @media screen and (max-width: 990px) {
+    @include backImage(650px);
+  }
+
+  @media screen and (max-width: 768px) {
+    @include backImage(522px);
+  }
+}
+
+.form {
+  input {
+    padding: 8px 16px;
+    max-width: 475px;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    margin-right: 8px;
+    &:focus {
+      box-shadow: 0 0 10px $color-lightblue;
+    }
+  }
+
+  .sign-up {
+    padding: 8px 40px;
+  }
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px;
+
+    input {
+      margin-right: 0;
+    }
+
+    .sign-up {
+      margin-top: 10px;
+      max-width: 475px;
+      width: 100%;
+    }
+  }
+}
+
+
+/* Features */
+#features {
+  padding: 120px 0;
+  background-color: $color-greyless;
+
+  .content {
+    margin: 0 30px 15px;
+    &:hover {
+      i {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  h3 {
+    margin-bottom: 8px;
+  }
+
+  i {
+    font-size: 4.5em;
+    margin: 16px 0;
+  }
+
+  @media screen and (max-width: 990px) {
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .col1-3 {
+      width: 320px;
+      margin-bottom: 30px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+
+/* Features description */
+
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 112px;
+
+  h2 {
+    margin-bottom: 8px;
+  }
+}
+
+#image-1 {
+  @include featured-image("../img/bg-showcase-1.jpg");
+}
+
+#image-2 {
+  @include featured-image("../img/bg-showcase-2.jpg");
+}
+
+#image-3 {
+  @include featured-image("../img/bg-showcase-3.jpg");
+}
+
+.row {
+  @media screen and (max-width: 990px) {
+    display: flex;
+    flex-direction: column;
+    
+    .col1-2 {
+      padding: 0 50px;
+    }
+  }
+
+  .image {
+    order: 1;
+  }
+  .details {
+    order: 2;
+  }
+}
+
+
+/* Reviews */
+#reviews {
+  padding: 120px 0;
+  background-color: $color-greyless;
+
+  .content {
+    margin: 0 35px;
+  }
+
+  h2 {
+    margin-bottom: 50px;
+  }
+
+  h5 {
+    margin-bottom: 8px;
+  }
+
+  p {
+    font-size: 1em;
+  }
+
+  img {
+    width: 190px;
+    border-radius: 50%;
+    margin-bottom: 16px;
+    box-shadow: 0 5px 5px 0 $color-grey;
+  }
+
+  @media screen and (max-width: 990px) {
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .content {
+      margin: 0;
+    }
+
+    .col1-3 {
+      width: 288px;
+      margin-bottom: 50px;
+    }
+  }
+}
+
+
+/* Get started */
+#get-started {
+  h2 {
+    color: $color-white;
+    margin: 0 5vw 24px;
+  }
+
+  @include backImage(335px);
+
+  @media screen and (max-width: 990px) {
+    @include backImage(390px);
+  }
+
+  @media screen and (max-width: 540px) {
+    @include backImage(428px);
+  }
+}
+
+.sign-up {
+  @extend button;
+}
+
+
+/* Footer */
+footer {
+  padding: 65px 0;
+  background-color: $color-greyless;
+
+  @media screen and (max-width: 990px) {
+    padding: 65px 20px;
+  }
+
+  .container {
+    display: flex;
+
+    @media screen and (max-width: 990px) {
+      flex-direction: column;
+      align-items: center;
+
+      #footer-left,
+      #footer-right {
+        margin: 0;
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        ul {
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+        li:last-child {
+          margin-right: 0;
+        }
+      }
+      #footer-left p {
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  ul {
+    display: flex;
+    list-style-type: none;
+  }
+  
+  #footer-left {
+    width: 50%;
+    margin-left: 15px;
+    text-align: left;
+
+    li {
+      margin-right: 25px;
+      &:last-child {
+        margin: 0;
+      }
+    }
+
+    a {
+      color: $color-lightblue;
+      text-decoration: none;
+      &:hover {
+        color: $color-blue;
+        text-decoration: underline;
+      }
+    }
+
+    p {
+      margin-top: 8px;
+      font-size: 0.8em;
+      color: $color-grey;
+    }
+  }
+
+  #footer-right {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    margin: 8px 0;
+
+    li {
+      margin-right: 20px;
+      #instagram:hover {
+        content: url('../img/instagram-logo (1).png');
+      }
+      #facebook:hover {
+        content: url('../img/facebook (1).png');
+      }
+      #twitter:hover {
+        content: url('../img/twitter (1).png');
+      }
+    }
+  }
+}
+
