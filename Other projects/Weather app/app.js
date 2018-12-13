@@ -1,25 +1,27 @@
 "use strict";
 
-let api = "https://api.apixu.com/v1/current.json?key=67782be5fbef412d9f1102825180712&q=";
-let div = document.getElementById("result");
-let submit = document.getElementById("submit");
-var input = document.querySelector("input");
-
-let divIcon = document.createElement("div");
-let divInfo = document.createElement("div");
-let iconImage = document.createElement("img");
-let loc = document.createElement("p");
-let temp = document.createElement("p");
-let feelsLike = document.createElement("p");
-let wind = document.createElement("p");
-let dateNow = document.createElement("p");
-let timeNow = document.createElement("p");
-
+// api link without location
+const api = "https://api.apixu.com/v1/current.json?key=67782be5fbef412d9f1102825180712&q=";
+// format for date object
+const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+// get elements from html page
+const div = document.getElementById("result");
+const submit = document.getElementById("submit");
+const input = document.querySelector("input");
+// create elements
+const divIcon = document.createElement("div");
+const divInfo = document.createElement("div");
+const iconImage = document.createElement("img");
+const loc = document.createElement("p");
+const temp = document.createElement("p");
+const feelsLike = document.createElement("p");
+const wind = document.createElement("p");
+const dateNow = document.createElement("p");
+const timeNow = document.createElement("p");
+// creating id's for some created elements
 divIcon.id = "icon";
 divInfo.id = "info";
 iconImage.id = "img";
-
-let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
 
 // Execute a function when the user releases a enter key on the keyboard
@@ -36,6 +38,7 @@ input.addEventListener("keyup", (e) => {
 
 // Execute a function when the user clicks on button
 submit.addEventListener("click", () => {
+  // clear result div after clicking on button or pressing enter in input field
   div.innerHTML = "";
 
   let city = document.getElementById("city").value;
@@ -46,16 +49,16 @@ submit.addEventListener("click", () => {
     div.appendChild(empty);
     return;
   }
-  
+  // full api link with location
   let url = api + city;
-
+  // Create a request variable and assign a new XMLHttpRequest object to it.
   let request = new XMLHttpRequest();
+  // Open a new connection, using the GET request on the URL endpoint
   request.open('GET', url, true);
-
   request.onload = function () {
     // Begin accessing JSON data here
     let data = JSON.parse(this.response);
-
+    // if no errors
     if (request.status >= 200 && request.status < 400) {
       // icon
       iconImage.src = "" + data.current.condition.icon;
@@ -73,7 +76,7 @@ submit.addEventListener("click", () => {
       timeNow.textContent = `Current time: ${time}.`;
       // wind speed
       wind.textContent = `Wind speed: ${data.current.wind_kph} km/h.`;
-      // append to document
+      // append elements to document
       div.appendChild(divIcon);
       div.appendChild(divInfo);
       divIcon.appendChild(iconImage);
@@ -84,12 +87,13 @@ submit.addEventListener("click", () => {
       divInfo.appendChild(timeNow);
       divInfo.appendChild(dateNow);
     } else {
+      // if error happend
       let error = document.createElement("p");
       error.className = "error";
       error.textContent = `Can't find ${city}, try again.`;
       div.appendChild(error);
     }
   }
-
+  // send request
   request.send();
 });
