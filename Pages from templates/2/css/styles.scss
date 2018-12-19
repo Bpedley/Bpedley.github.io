@@ -1,0 +1,529 @@
+/* Import */
+@import "_normalize";
+@import "_variables";
+@import "_mixins";
+@import "_media";
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+@font-face {
+  font-family: 'droid_serif';
+  src: local("droid_serif"), url('../fonts/droidserif_italic_macroman/DroidSerif-Italic-webfont.woff') format('woff');
+}
+
+/* Base */
+#services,
+#portfolio,
+#about,
+#team {
+  padding: 150px 0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1140px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.col1-3 {
+  float: left;
+  width: 33.33%;
+}
+
+.col1-2 {
+  float: left;
+  width: 50%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+#intro,
+#services,
+#portfolio,
+#about,
+#team,
+#sponsor,
+#contact,
+header,
+footer {
+  display: flex;
+  align-items: center;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: $selection;
+}
+
+h2 {
+  margin-bottom: 15px;
+}
+
+.subheading {
+  margin-bottom: 75px;
+}
+
+
+/* Typography */
+#services i {
+  font-size: 4rem;
+  color: $white;
+}
+
+input,
+textarea {
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+h2 {
+  font-size: 2.5em;
+  line-height: 1.2;
+}
+
+.subheading {
+  color: $light-grey;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.col1-3 p,
+.img-info p,
+#desc {
+  line-height: 1.75;
+}
+
+h1,
+h2,
+button,
+#nav-links {
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+footer,
+button,
+#circle,
+#nav-links, {
+  font-family: $montserrat;
+}
+
+p {
+  font-family: $droid;
+  color: $light-grey;
+}
+
+.col1-3 p,
+.img-info p,
+#desc,
+input,
+textarea {
+  font-family: $roboto;
+}
+
+#logo {
+  font-family: $kaushan;
+  font-size: 1.75em;
+  text-decoration: none;
+  color: $logo;
+  &:hover {
+    color: $logo-hover;
+  }
+}
+
+nav {
+  line-height: 1.5;
+  #nav-links a {
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    color: $white;
+    text-decoration: none;
+    &:hover {
+      color: $logo;
+    }
+  }
+}
+
+#intro {
+  text-transform: capitalize;
+  h1 {
+    font-size: 4.6875rem;
+    line-height: 1;
+  }
+  #welcome {
+    font-size: 2.5em;
+    line-height: 1;
+    color: $white;
+  }
+}
+
+button {
+  font-size: 1.125rem;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+#contact h2,
+button,
+#intro {
+  color: $white;
+}
+
+footer {
+  a {
+    color: $logo;
+    text-decoration: none;
+    &:hover {
+      color: $logo-hover;
+      text-decoration: underline;
+    }
+  }
+  .col1-3 {
+    font-size: 0.9em;
+    line-height: 40px;
+  }
+}
+
+
+/* Buttons */
+button {
+  background-color: $logo;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 20px 40px;
+  &:hover {
+    background-color: $button-hover;
+  }
+}
+
+
+/* Navbar */
+#navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+nav {
+  height: 102px;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  #logo {
+    margin-right: auto;
+    cursor: pointer;
+  }
+  #nav-links {
+    display: flex;
+    a {
+      padding: 15px 14px;
+      cursor: pointer;
+    }
+  }
+}
+
+#navbar,
+nav,
+#logo {
+  transition: all 0.3s;
+}
+
+
+/* Header */
+header {
+  @include backImage(760px ,"../img/header-bg.jpg");
+  background-size: cover;
+}
+
+#intro {
+  text-transform: capitalize;
+  flex-direction: column;
+  #welcome {
+    margin-top: 95px;
+  }
+  h1 {
+    margin: 25px 0 50px;
+  }
+}
+
+/* Services */
+#services {
+  .col1-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p {
+      margin: 0 15px 16px;
+    }
+  }
+  h3 {
+    margin: 15px;
+  }
+  span {
+    display: block;
+    height: 128px;
+    width: 128px;
+    background-color: $selection;
+    border-radius: 50%;
+    i {
+      margin-top: 30px;
+    }
+  }
+}
+
+
+/* Portfolio */
+@for $i from 1 through 6 {
+  #thumbnails-#{$i} {
+    background: rgba($logo, 0) url("../img/portfolio/0" + $i + "-thumbnail.jpg");
+  }
+}
+
+#portfolio {
+  background-color: $dark-white;
+  .col1-3 {
+    width: 350px;
+    margin: 0 15px 30px;
+    background-color: $white;
+    p {
+      font-family: "droid_serif", sans-serif;
+    }
+    div {
+      margin: 25px;
+    }
+  }
+  a {
+    display: block;
+    position: relative;
+    height: 262px;
+    width: 350px;
+    background-size: cover;
+    transition: background-color .4s;
+    &:hover {
+      background-color: rgba($logo, .9);
+    }
+    &:before {
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      background-color: inherit;
+      content: ' ';
+    }
+  }
+}
+
+
+/* About */
+#about {
+  .container {
+    padding: 0 15px 0;
+  }
+}
+
+#about .grid {
+  position: relative;
+  max-width: 1140px;
+  width: 100%;
+  &:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    width: 2px;
+    background-color: $border;
+    z-index: -1;
+  }
+}
+
+.row {
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+  &:last-child {
+    justify-content: center;
+    margin-bottom: 0;
+    p {
+      display: block;
+      width: 152px;
+      height: 152px;
+      border-radius: 50%;
+      background-color: $logo;
+      color: $white;
+      font-size: 1.125rem;
+      line-height: 26px;
+      padding: 35px 30px;
+      text-align: center;
+      font-weight: bold;
+      z-index: 5;
+    }
+  }
+  .border {
+    width: 166px;
+    height: 166px;
+    border: 7px solid $border;
+    border-radius: 50%;
+    .img-round {
+      width: 152px;
+      height: 152px;
+      border-radius: 50%;
+    }
+  }
+  .img-info {
+    width: 470px;
+    display:inline-block;
+    padding: 0 20px 20px 100px;
+    h3:last-of-type {
+      margin: 8px 0;
+    }
+  }
+}
+
+.row:nth-of-type(even) .img-info {
+  padding-left: 20px;
+  padding-right: 100px;
+  text-align: left;
+}
+
+.row:nth-of-type(odd) {
+  flex-direction: row-reverse;
+}
+
+
+/* Team */
+#team {
+  background-color: $dark-white;
+  .col1-3 {
+    padding: 0 15px 50px;
+    h3 {
+      margin-top: 25px;
+    }
+    p {
+      margin-bottom: 16px;
+    }
+  }
+  .border {
+    margin: 0 auto;
+    width: 225px;
+    height: 225px;
+    border: 5px solid white;
+    border-radius: 50%;
+  }
+  img {
+    border-radius: 50%;
+    width: 215px;
+  }
+  #desc {
+    display: inline-block;
+    margin: 0 18%;
+    margin-bottom: 16px;
+  }
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  a {
+    display: block;
+    height: 50px;
+    width: 50px;
+    background-color: $dark-grey;
+    border-radius: 50%;
+    margin-right: 12px;
+    transition: .4s;
+    &:last-child {
+      margin-right: 0px;
+    }
+    &:hover {
+      background-color: $logo;
+    }
+    i {
+      margin-top: 15px;
+      font-size: 20px;
+      color: $dark-white;
+    }
+  }
+}
+
+
+/* Sponsors */
+#sponsor {
+  background-color: white;
+  height: 146px;
+  img {
+    margin: 0 42px;
+  }
+}
+
+
+/* Contact */
+.contacts {
+  display: flex;
+  flex-direction: column;
+  padding: 0 15px;
+  input,
+  textarea {
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    border: 1px solid white;
+    &:focus {
+      outline: none;
+      border-color: $logo;
+    }
+  }
+  textarea {
+    height: 248px;
+  }
+}
+
+#contact {
+  @include backImage(800px, "../img/map-image.png");
+  background-color: $dark-grey;
+}
+
+::placeholder {
+  color: #CED4DD;
+  letter-spacing: 1px;
+}
+
+
+/* Footer */
+footer {
+  height: 100px;
+  .container {
+    height: 50px;
+  }
+  .col1-3 {
+    display: flex;
+    justify-content: center;
+    padding: 0 15px;
+  }
+  ul {
+    display: flex;
+    li:last-child {
+      margin-left: 15px;
+    }
+  }
+}
+

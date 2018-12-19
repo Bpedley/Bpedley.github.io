@@ -1,0 +1,10 @@
+@mixin backImage($height, $url) {
+  background-image: url($url);
+  background-repeat:no-repeat;
+  background-position: center;
+  height: $height;
+}
+
+@mixin thumbnails($url) {
+  background-image: $url;
+}
