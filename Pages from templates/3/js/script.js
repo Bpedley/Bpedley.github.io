@@ -1,26 +1,28 @@
 "use strict";
 
 // fixed navbar animation
-var navDiv = document.querySelector("#navbar");
-var logo = document.querySelector("#logo");
-var nav = document.querySelector("nav");
+let navDiv = document.querySelector("#navbar");
+let logo = document.querySelector("#logo");
+let nav = document.querySelector("nav");
 
 // apply new styles when document height 200px or above
-if ((window.pageYOffset || document.documentElement.scrollTop) >= 200) {
-  navDiv.style.backgroundColor = "#212529";
-  nav.style.height = "54px";
-  logo.style.fontSize = "20px";
-}
+document.addEventListener("DOMContentLoaded", () => {
+  if ((window.pageYOffset || document.documentElement.scrollTop) >= 200) {
+    navDiv.style.backgroundColor = "#212529";
+    nav.style.height = "54px";
+    logo.style.fontSize = "20px";
+  }
+});
+
 // apply same styles when scrolled and when document height bellow 200px delete applied styles
 window.onscroll = function() {
-  var scrolled = window.pageYOffset || document.documentElement.scrollTop;
-
+  let scrolled = window.pageYOffset || document.documentElement.scrollTop;
+  
   if (scrolled >= 200) {
     navDiv.style.backgroundColor = "#212529";
     nav.style.height = "54px";
     logo.style.fontSize = "20px";
   }
-
   if (scrolled < 200) {
     nav.style.height = "";
     navDiv.style.backgroundColor = "";
@@ -30,7 +32,7 @@ window.onscroll = function() {
 
 
 // navbar menu highlight on scroll
-let mainNavLinks = document.querySelectorAll("nav ul li a");
+let mainNavLinks = document.querySelectorAll("#nav-links li a");
 let mainSections = document.querySelectorAll("section");
 let lastId;
 let cur = [];
@@ -50,5 +52,19 @@ window.addEventListener("scroll", event => {
     } else {
       link.style.color = "";
     }
+  });
+});
+
+// smooth scroll animation on menu items
+$(document).ready(function(){
+  $('#nav-links a[href^="#"], .button').on('click', function (e) {
+    e.preventDefault();
+
+    var target = this.hash;
+    var $target = $(target);
+
+    $('html, body').animate({
+      'scrollTop': $target.offset().top - 54
+    }, 1000, 'swing');
   });
 });

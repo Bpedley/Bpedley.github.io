@@ -13,3 +13,9 @@
   display: flex;
   align-items: center;
 }
+
+@mixin round-img($length) {
+  border-radius: 50%;
+  width: $length;
+  height: $length;
+}

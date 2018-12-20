@@ -23,6 +23,18 @@
   max-width: 1140px;
   text-align: center;
   margin: 0 auto;
+
+  @media (max-width: $large) {
+    max-width: 960px;
+  }
+
+  @media (max-width: $medium) {
+    max-width: 720px;
+  }
+
+  @media (max-width: $small) {
+    max-width: 540px;
+  }
 }
 
 .col1-3 {
@@ -42,16 +54,16 @@ ul {
 section {
   padding: 150px 0;
   @include flex-align;
+
+  @media (max-width: $small) {
+    padding: 100px 0;
+  }
 }
 
 #sponsor,
 header,
 footer {
   @include flex-align;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 ::selection {
@@ -73,6 +85,11 @@ h2 {
   line-height: 1.2;
 }
 
+h1 {
+  font-size: 4.6875rem;
+  line-height: 1;
+}
+
 h2 {
   font-size: 2.5em;
 }
@@ -81,15 +98,9 @@ h3 {
   font-size: 1.5rem;
 }
 
-#services i {
-  font-size: 4em;
-  line-height: 2em;
-  color: $white;
-}
-
 input,
 textarea,
-button,
+.button,
 a {
   line-height: 1.5;
 }
@@ -100,29 +111,48 @@ textarea {
   font-family: $roboto;
 }
 
-.col1-3 p,
-.img-info p,
-#desc {
-  line-height: 1.75;
-  font-family: $roboto;
+#services i {
+  font-size: 4em;
+  line-height: 2em;
+  color: $white;
 }
 
 h1,
 h2,
-button,
+.button,
 #nav-links {
   text-transform: uppercase;
 }
 
 #contact h2,
-button,
+.button,
 #intro {
   color: $white;
 }
 
-p:not(.circle) {
-  font-family: "droid_serif", sans-serif;
+p {
+  font-family: $roboto;
   color: $light-grey;
+}
+
+#circle {
+  font-family: $montserrat;
+  text-transform: capitalize;
+  color: $white;
+  font-size: 1.125rem;
+  line-height: 26px;
+  text-align: center;
+  font-weight: bold;
+
+  @media (max-width: $medium) {
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  @media (max-width: $small) {
+    font-size: 10px;
+    line-height: 14px;
+  }
 }
 
 #logo {
@@ -132,6 +162,9 @@ p:not(.circle) {
   color: $link;
   &:hover {
     color: $link-hover;
+  }
+  @media (max-width: 992px) {
+    font-size: 1.25em;
   }
 }
 
@@ -147,10 +180,7 @@ p:not(.circle) {
 
 #intro {
   text-transform: capitalize;
-  h1 {
-    font-size: 4.6875rem;
-    line-height: 1;
-  }
+  
   #welcome {
     font-size: 2.5em;
     line-height: 1;
@@ -158,9 +188,10 @@ p:not(.circle) {
   }
 }
 
-button {
+.button {
   font-size: 1.125rem;
   font-weight: bold;
+  text-decoration: none;
 }
 
 .socials i {
@@ -171,9 +202,10 @@ button {
 
 footer {
   #copyright,
-  a {
+  li {
     line-height: 40px;
   }
+
   a {
     color: $link;
     text-decoration: none;
@@ -182,20 +214,33 @@ footer {
       text-decoration: underline;
     }
   }
+
   .col1-3 {
     font-size: 0.9em;
-    line-height: 40px;
   }
+}
+
+.col1-3 p,
+.img-info p,
+#desc {
+  line-height: 1.75;
+}
+
+#welcome,
+.subheading,
+#portfolio p {
+  font-family: $droid-serif;
 }
 
 
 /* Buttons */
-button {
+.button {
+  display: inline-block;
   background-color: $link;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  padding: 20px 40px;
+  padding: 21px 40px;
   &:hover {
     background-color: $button-hover;
   }
@@ -212,18 +257,23 @@ button {
 nav {
   height: 102px;
   padding: 0 15px;
-  display: flex;
-  align-items: center;
+  @include flex-align;
+
   #logo {
     margin-right: auto;
     cursor: pointer;
   }
+
   #nav-links {
     display: flex;
     a {
       padding: 15px 14px;
       cursor: pointer;
     }
+  }
+
+  @media (max-width: 992px) {
+    padding: 0;
   }
 }
 
@@ -237,39 +287,69 @@ nav,
 /* Header */
 header {
   @include backImage(760px ,"../img/header-bg.jpg");
+  padding: 300px 0 200px;
   background-size: cover;
+
+  @media (max-width: $medium) {
+    @include backImage(834px ,"../img/header-bg.jpg");
+  }
+
+  @media (max-width: $small) {
+    @include backImage(491px ,"../img/header-bg.jpg");
+    padding: 150px 0 100px;
+  }
 }
 
 #intro {
-  text-transform: capitalize;
   flex-direction: column;
+
   #welcome {
-    margin-top: 95px;
+    @media (max-width: $small) {
+      font-size: 1.375rem;
+    }
   }
+
   h1 {
     margin: 25px 0 50px;
+
+    @media (max-width: $medium) {
+      padding: 0 50px;
+    }
+
+    @media (max-width: $small) {
+      padding: 0;
+      font-size: 3.125rem;
+      margin-bottom: 25px;
+    }
   }
 }
 
 /* Services */
 #services {
+
   .col1-3 {
-    display: flex;
+    @include flex-align;
     flex-direction: column;
-    align-items: center;
+
     p {
       margin: 0 15px 16px;
     }
+
+    @media (max-width: $small) {
+      width: 100%;
+    }
   }
+
   h3 {
     margin: 15px;
   }
+
   span {
     display: block;
     height: 128px;
     width: 128px;
+    @include round-img(128px);
     background-color: $selection;
-    border-radius: 50%;
   }
 }
 
@@ -283,49 +363,95 @@ header {
 
 #portfolio {
   background-color: $dark-white;
+  
   .col1-3 {
-    width: 350px;
-    margin: 0 15px 30px;
-    background-color: $white;
-    p {
-      font-family: "droid_serif", sans-serif;
+    padding: 0 15px 0;
+    margin-bottom: 30px;
+
+    .caption {
+      @include flex-align;
+      flex-direction: column;
+      background-color: $white;
+      padding: 25px;
+      margin: 0 auto;
+
+      @media (max-width: $small-s) {
+        max-width: 400px;
+        width: 100%;
+      }
     }
-    div {
-      margin: 25px;
+
+    @media (max-width: $large) {
+      width: 319px;
+    }
+
+    @media (max-width: $medium) {
+      width: 240px;
+    }
+
+    @media (max-width: $small) {
+      width: 270px;
+      margin-bottom: 15px;
+    }
+
+    @media (max-width: $small-s) {
+      width: 100%;
     }
   }
+
   a {
     display: block;
     position: relative;
+    margin: 0 auto;
     height: 262px;
-    width: 350px;
+    max-width: 350px;
+    width: 100%;
     background-size: cover;
+    background-repeat: no-repeat;
     transition: background-color .4s;
     &:hover {
       background-color: rgba($link, .9);
     }
     &:before {
       position: absolute;
+      height: 100%;
       top: 0; right: 0; bottom: 0; left: 0;
       background-color: inherit;
       content: ' ';
+    }
+
+    @media (max-width: $large) {
+      max-width: 289px;
+      height: 217px;
+    }
+
+    @media (max-width: $medium) {
+      max-width: 210px;
+      height: 157px;
+    }
+
+    @media (max-width: $small) {
+      max-width: 240px;
+      height: 180px;
+    }
+
+    @media (max-width: $small-s) {
+      max-width: 400px;
+      min-height: 251px;
     }
   }
 }
 
 
 /* About */
-#about {
-  .container {
-    padding: 0 15px 0;
-  }
+#about .container {
+  padding: 0 15px 0;
 }
 
-#about .grid {
+.grid {
   position: relative;
-  max-width: 1140px;
   width: 100%;
-  &:before{
+  &:before {
     content: '';
     position: absolute;
     top: 0;
@@ -335,6 +461,9 @@ header {
     width: 2px;
     background-color: $border;
     z-index: -1;
+    @media (max-width: $small) {
+      left: 40px;
+    }
   }
 }
 
@@ -343,79 +472,145 @@ header {
   display: flex;
   justify-content: flex-end;
   text-align: right;
+
+  @media (max-width: $small) {
+    margin-bottom: 50px;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
   &:last-child {
     justify-content: center;
     margin-bottom: 0;
     p {
-      display: block;
-      width: 152px;
-      height: 152px;
-      border-radius: 50%;
+      @include flex-align;
+      @include round-img(156px);
+      padding: 0 30px;
       background-color: $link;
-      color: $white;
-      font-size: 1.125rem;
-      line-height: 26px;
-      padding: 35px 30px;
-      text-align: center;
-      font-weight: bold;
       z-index: 5;
+
+      @media (max-width: $large) {
+        @include round-img(136px);
+      }
+
+      @media (max-width: $medium) {
+        @include round-img(86px);
+        padding: 0 10px;
+      }
+
+      @media (max-width: $small) {
+        @include round-img(66px);
+        padding: 0 10px;
+      }
+    }
+
+    @media (max-width: $small) {
+      justify-content: flex-start;
     }
   }
+
   .border {
-    width: 166px;
-    height: 166px;
     border: 7px solid $border;
-    border-radius: 50%;
+    @include round-img(170px);
     .img-round {
-      width: 152px;
-      height: 152px;
-      border-radius: 50%;
+      @include round-img(156px);
+    }
+
+    @media (max-width: $large) {
+      @include round-img(150px);
+      .img-round {
+        @include round-img(136px);
+      }
+    }
+
+    @media (max-width: $medium) {
+      @include round-img(100px);
+      .img-round {
+        @include round-img(86px);
+      }
+    }
+
+    @media (max-width: $small) {
+      @include round-img(80px);
+      .img-round {
+        @include round-img(66px);
+      }
     }
   }
+  
   .img-info {
     width: 470px;
-    display:inline-block;
     padding: 0 20px 20px 100px;
+
     h3:last-of-type {
       margin: 8px 0;
     }
+    @media (max-width: $large) {
+      width: 391px;
+      padding: 0 20px 20px;
+    }
+    @media (max-width: $medium) {
+      width: 295px;
+      padding: 0 30px 20px;
+    }
+    @media (max-width: $small) {
+      width: 100%;
+      padding: 0 20px;
+    }
   }
 }
 
-.row:nth-of-type(even) .img-info {
-  padding-left: 20px;
-  padding-right: 100px;
-  text-align: left;
-}
+@media (min-width: $small) {
+  .row:nth-of-type(even) .img-info {
+    padding-left: 20px;
+    padding-right: 100px;
+    text-align: left;
 
-.row:nth-of-type(odd) {
-  flex-direction: row-reverse;
+    @media (max-width: $large) {
+      padding-right: 20px;
+    }
+
+    @media (max-width: $medium) {
+      padding-right: 30px;
+    }
+  }
+
+  .row:nth-of-type(odd) {
+    flex-direction: row-reverse;
+  }
 }
 
 
 /* Team */
 #team {
   background-color: $dark-white;
+
   .col1-3 {
     padding: 0 15px 50px;
+
     h3 {
       margin-top: 25px;
     }
+
     p {
       margin-bottom: 16px;
     }
+
+    @media (max-width: $small) {
+      width: 100%;
+    }
   }
+
   .border {
     margin: 0 auto;
-    width: 225px;
-    height: 225px;
+    @include round-img(225px);
     border: 5px solid white;
-    border-radius: 50%;
   }
+
   img {
-    border-radius: 50%;
-    width: 215px;
+    @include round-img(215px);
   }
+
   #desc {
     display: inline-block;
     margin: 0 18%;
@@ -426,12 +621,11 @@ header {
 .socials {
   display: flex;
   justify-content: center;
+
   a {
+    @include round-img(50px);
     display: block;
-    height: 50px;
-    width: 50px;
     background-color: $dark-grey;
-    border-radius: 50%;
     margin-right: 12px;
     transition: .4s;
     &:last-child {
@@ -448,8 +642,29 @@ header {
 #sponsor {
   background-color: white;
   height: 146px;
-  img {
-    margin: 0 42px;
+  @include flex-align;
+  justify-content: space-around;
+
+  @media (max-width: $medium) and (min-width: $small) {
+    img {
+      width: 150px;
+      height: 37px;
+    }
+  }
+
+  @media (max-width: $small) {
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: $small) {
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: $small-s) {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    height: 296px;
   }
 }
 
@@ -459,6 +674,7 @@ header {
   display: flex;
   flex-direction: column;
   padding: 0 15px;
+
   input,
   textarea {
     padding: 20px;
@@ -470,6 +686,7 @@ header {
       border-color: $link;
     }
   }
+
   textarea {
     height: 248px;
   }
@@ -478,30 +695,58 @@ header {
 #contact {
   @include backImage(800px, "../img/map-image.png");
   background-color: $dark-grey;
+
+  @media (max-width: $small) {
+    @include backImage(972px, "../img/map-image.png");
+  }
 }
 
 ::placeholder {
-  color: #CED4DD;
+  color: $placeholder;
   letter-spacing: 1px;
+}
+
+@media (max-width: $small) {
+  .col1-2 {
+    width: 100%;
+  }
 }
 
 
 /* Footer */
 footer {
   height: 100px;
-  .container {
-    height: 50px;
-  }
+
   .col1-3 {
     display: flex;
     justify-content: center;
     padding: 0 15px;
   }
+
   ul {
     display: flex;
     li:last-child {
       margin-left: 15px;
     }
   }
-}
 
+  @media (max-width: $medium) and (min-width: $small) {
+    height: 130px;
+
+    #copyright {
+      line-height: 2;
+    }
+  }
+
+  @media (max-width: $small) {
+    height: 180px;
+
+    .col1-3 {
+      width: 100%;
+    }
+
+    .socials {
+      flex-direction: row;
+    }
+  }
+}
