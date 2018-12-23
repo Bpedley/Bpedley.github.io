@@ -1,4 +1,4 @@
-
+/* Base */
 * {
   margin: 0;
   padding: 0;
@@ -10,14 +10,12 @@
 }
 
 body {
-  background: url("https://www.blissevolution.com/wp-content/uploads/2018/07/pexels-photo-814499.jpeg") no-repeat;
-  background-size: cover;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   text-align: center;
+  background-color: rgb(194, 230, 189);
 }
 
 /* Clearfix */
-
 .clearfix:before,
 .clearfix:after {
   content: "";
@@ -32,7 +30,6 @@ body {
 
 
 /* Styles */
-
 .container {
   margin: 100px auto;
   padding: 50px;
