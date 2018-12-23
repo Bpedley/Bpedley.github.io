@@ -1,15 +1,21 @@
-
-$logo: #fed136;
-$logo-hover: #fec503;
-$white: #ffffff;
+// colors
+$link: #fed136;
+$link-hover: #fec503;
 $button-hover: #fec810;
+$selection: #FDD035;
+$white: #ffffff;
 $dark-grey: #212529;
 $dark-white: #f8f9fa;
 $light-grey: #6c757d;
-$selection: #FDD035;
 $border: #E9ECEF;
-
+$placeholder: #CED4DD;
+// fonts
 $montserrat: "Montserrat", sans-serif;
-$droid: "droid_serif", sans-serif;
 $roboto: "Roboto Slab", serif;
 $kaushan: "Kaushan Script", cursive;
+$droid-serif: "droid_serif", sans-serif;
+// breakpoints
+$small: 576px;
+$medium: 768px;
+$large: 992px;
+$huge: 1200px;

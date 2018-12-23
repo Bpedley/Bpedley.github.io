@@ -8,3 +8,50 @@
 @mixin thumbnails($url) {
   background-image: $url;
 }
+
+@mixin flex-align() {
+  display: flex;
+  align-items: center;
+}
+
+@mixin round-img($length) {
+  border-radius: 50%;
+  width: $length;
+  height: $length;
+}
+
+@mixin small {
+  @media screen and (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media screen and (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin huge {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin min-width($width) {
+  @media screen and (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin min-max($min, $max) {
+  @media screen and (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}

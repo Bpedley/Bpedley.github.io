@@ -2,7 +2,6 @@
 @import "_normalize";
 @import "_variables";
 @import "_mixins";
-@import "_media";
 @import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
@@ -11,14 +10,8 @@
   src: local("droid_serif"), url('../fonts/droidserif_italic_macroman/DroidSerif-Italic-webfont.woff') format('woff');
 }
 
-/* Base */
-#services,
-#portfolio,
-#about,
-#team {
-  padding: 150px 0;
-}
 
+/* Base */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -26,10 +19,19 @@
 }
 
 .container {
-  width: 100%;
+  width: 100%;  
   max-width: 1140px;
   text-align: center;
   margin: 0 auto;
+  @include huge {
+    max-width: 960px;
+  }
+  @include large {
+    max-width: 720px;
+  }
+  @include medium {
+    max-width: 540px;
+  }
 }
 
 .col1-3 {
@@ -46,21 +48,18 @@ ul {
   list-style-type: none;
 }
 
-#intro,
-#services,
-#portfolio,
-#about,
-#team,
-#sponsor,
-#contact,
-header,
-footer {
-  display: flex;
-  align-items: center;
+section {
+  padding: 150px 0;
+  @include medium {
+    padding: 100px 0;
+  }
 }
 
-html {
-  scroll-behavior: smooth;
+#sponsor,
+header,
+footer,
+section {
+  @include flex-align;
 }
 
 ::selection {
@@ -77,30 +76,145 @@ h2 {
 
 
 /* Typography */
-#services i {
-  font-size: 4rem;
-  color: $white;
+* {
+  font-family: $montserrat;
+  line-height: 1.2;
 }
 
-input,
-textarea {
-  font-weight: bold;
-  line-height: 1.5;
+h1 {
+  font-size: 4.6875rem;
+  line-height: 1;
 }
 
 h2 {
   font-size: 2.5em;
-  line-height: 1.2;
-}
-
-.subheading {
-  color: $light-grey;
-  line-height: 1.2;
 }
 
 h3 {
   font-size: 1.5rem;
-  line-height: 1.2;
+}
+
+input,
+textarea,
+.button,
+a {
+  line-height: 1.5;
+}
+
+input,
+textarea,
+#circle,
+.button,
+button {
+  font-weight: bold;
+}
+
+input,
+textarea,
+p {
+  font-family: $roboto;
+}
+
+#services i {
+  font-size: 4em;
+  line-height: 2;
+}
+
+h1, h2,
+.button,
+#nav-links {
+  text-transform: uppercase;
+}
+
+#contact h2,
+.button,
+#intro,
+#menu,
+i,
+#circle,
+a,
+#welcome {
+  color: $white;
+}
+
+p {
+  color: $light-grey;
+}
+
+#circle {
+  font-family: $montserrat;
+  font-size: 1.125rem;
+  line-height: 26px;
+  text-align: center;
+  @include large {
+    font-size: 13px;
+    line-height: 18px;
+  }
+  @include medium {
+    font-size: 10px;
+    line-height: 14px;
+  }
+}
+
+#logo,
+#nav-links a,
+.button,
+#copyright a {
+  text-decoration: none;
+}
+
+#logo {
+  font-family: $kaushan;
+  font-size: 1.75em;
+  color: $link;
+  &:hover {
+    color: $link-hover;
+  }
+}
+
+#nav-links a {
+  font-size: 0.9em;
+  letter-spacing: 1px;
+  &:hover {
+    color: $link;
+  }
+}
+
+#circle,
+#intro {
+  text-transform: capitalize;
+}
+
+#welcome {
+  font-size: 2.5em;
+  line-height: 1;
+}
+
+.button {
+  font-size: 1.125rem;
+}
+
+.socials i {
+  line-height: 2.5;
+  font-size: 1.25rem;
+  color: $dark-white;
+}
+
+footer {
+  #copyright, li {
+    line-height: 40px;
+  }
+  a {
+    color: $link;
+    text-decoration: none;
+    &:hover {
+      color: $link-hover;
+      text-decoration: underline;
+    }
+  }
+  .col1-3 {
+    font-size: 0.9em;
+  }
 }
 
 .col1-3 p,
@@ -109,107 +223,47 @@ h3 {
   line-height: 1.75;
 }
 
-h1,
-h2,
-button,
-#nav-links {
-  text-transform: uppercase;
+#welcome,
+.subheading,
+#portfolio p {
+  font-family: $droid-serif;
 }
 
-h1,
-h2,
-h3,
-footer,
-button,
-#circle,
-#nav-links, {
-  font-family: $montserrat;
+#menu {
+  font-size: 0.75rem;
+  line-height: 1;
 }
 
-p {
-  font-family: $droid;
-  color: $light-grey;
-}
-
-.col1-3 p,
-.img-info p,
-#desc,
-input,
-textarea {
-  font-family: $roboto;
-}
-
-#logo {
-  font-family: $kaushan;
-  font-size: 1.75em;
-  text-decoration: none;
-  color: $logo;
-  &:hover {
-    color: $logo-hover;
+.dialog-container {
+  text-align: center;
+  .subheading {
+    color: $light-grey;
   }
-}
-
-nav {
-  line-height: 1.5;
-  #nav-links a {
-    font-size: 0.9em;
-    letter-spacing: 1px;
-    color: $white;
-    text-decoration: none;
-    &:hover {
-      color: $logo;
-    }
+  ul li, p, h2 {
+    color: $dark-grey;
   }
-}
-
-#intro {
-  text-transform: capitalize;
-  h1 {
-    font-size: 4.6875rem;
-    line-height: 1;
+  h2 {
+    font-size: 3rem;
   }
-  #welcome {
-    font-size: 2.5em;
-    line-height: 1;
-    color: $white;
+  p {
+    line-height: 1.75;
   }
-}
-
-button {
-  font-size: 1.125rem;
-  font-weight: bold;
-  line-height: 1.5;
-}
-
-#contact h2,
-button,
-#intro {
-  color: $white;
-}
-
-footer {
-  a {
-    color: $logo;
-    text-decoration: none;
-    &:hover {
-      color: $logo-hover;
-      text-decoration: underline;
-    }
-  }
-  .col1-3 {
-    font-size: 0.9em;
-    line-height: 40px;
+  li {
+    font-family: $roboto;
+    line-height: 1.5;
   }
 }
 
 
 /* Buttons */
-button {
-  background-color: $logo;
+.button {
+  display: inline-block;
+  background-color: $link;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  padding: 20px 40px;
+  padding: 21px 40px;
+  transition: 0.3s;
   &:hover {
     background-color: $button-hover;
   }
@@ -220,14 +274,25 @@ button {
 #navbar {
   position: fixed;
   width: 100%;
-  z-index: 1;
+  z-index: 100;
+}
+
+#menu {
+  position: absolute;
+  top: 8px;
+  right: 15px;
+  background-color: $link;
+  border-radius: 4px;
+  border: none;
+  padding: 13px;
+  cursor: pointer;
 }
 
 nav {
+  position: relative;
   height: 102px;
   padding: 0 15px;
-  display: flex;
-  align-items: center;
+  @include flex-align;
   #logo {
     margin-right: auto;
     cursor: pointer;
@@ -239,40 +304,89 @@ nav {
       cursor: pointer;
     }
   }
+  @include large {
+    padding: 0;
+  }
 }
 
-#navbar,
-nav,
-#logo {
-  transition: all 0.3s;
+@include min-width($large) {
+  #navbar,
+  nav,
+  #logo {
+    transition: all 0.2s;
+  }
+}
+
+@include large {
+  nav {
+    display: flex;
+    flex-direction: column;
+    #nav-links {
+      display: flex;
+      flex-direction: column;
+      margin-right: auto;
+      text-align: left;
+      width: 100%;
+      li {
+        overflow: hidden;
+      }
+      li a {
+        display: block;
+      }
+    }
+    #logo {
+      padding-top: 13px;
+      margin-bottom: 15px;
+      margin-left: 15px;
+    }
+  }
 }
 
 
 /* Header */
 header {
   @include backImage(760px ,"../img/header-bg.jpg");
+  padding: 300px 0 200px;
   background-size: cover;
+  @include large {
+    @include backImage(834px ,"../img/header-bg.jpg");
+  }
+  @include medium {
+    @include backImage(491px ,"../img/header-bg.jpg");
+    padding: 150px 0 100px;
+  }
 }
 
 #intro {
-  text-transform: capitalize;
   flex-direction: column;
   #welcome {
-    margin-top: 95px;
+    @include medium {
+      font-size: 1.375rem;
+    }
   }
   h1 {
     margin: 25px 0 50px;
+    @include large {
+      padding: 0 50px;
+    }
+    @include medium {
+      padding: 0;
+      font-size: 3.125rem;
+      margin-bottom: 25px;
+    }
   }
 }
 
 /* Services */
 #services {
   .col1-3 {
-    display: flex;
+    @include flex-align;
     flex-direction: column;
-    align-items: center;
     p {
       margin: 0 15px 16px;
+    }
+    @include medium {
+      width: 100%;
     }
   }
   h3 {
@@ -282,11 +396,8 @@ header {
     display: block;
     height: 128px;
     width: 128px;
+    @include round-img(128px);
     background-color: $selection;
-    border-radius: 50%;
-    i {
-      margin-top: 30px;
-    }
   }
 }
 
@@ -294,64 +405,103 @@ header {
 /* Portfolio */
 @for $i from 1 through 6 {
   #thumbnails-#{$i} {
-    background: rgba($logo, 0) url("../img/portfolio/0" + $i + "-thumbnail.jpg");
+    background: rgba($link, 0) url("../img/portfolio/0" + $i + "-thumbnail.jpg");
   }
 }
 
 #portfolio {
   background-color: $dark-white;
   .col1-3 {
-    width: 350px;
-    margin: 0 15px 30px;
-    background-color: $white;
-    p {
-      font-family: "droid_serif", sans-serif;
+    padding: 0 15px 0;
+    margin-bottom: 30px;
+    .caption {
+      @include flex-align;
+      flex-direction: column;
+      background-color: $white;
+      padding: 25px;
+      margin: 0 auto;
+      @include small {
+        max-width: 400px;
+        width: 100%;
+      }
     }
-    div {
-      margin: 25px;
+    @include huge {
+      width: 319px;
+    }
+    @include large {
+      width: 240px;
+    }
+    @include medium {
+      width: 270px;
+      margin-bottom: 15px;
+    }
+    @include small {
+      width: 100%;
     }
   }
   a {
     display: block;
     position: relative;
+    margin: 0 auto;
     height: 262px;
-    width: 350px;
+    max-width: 350px;
+    width: 100%;
     background-size: cover;
+    background-repeat: no-repeat;
     transition: background-color .4s;
     &:hover {
-      background-color: rgba($logo, .9);
+      background-color: rgba($link, .9);
     }
     &:before {
       position: absolute;
-      top: 0; right: 0; bottom: 0; left: 0;
+      display: block;
+      height: 100%;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
       background-color: inherit;
       content: ' ';
+    }
+    @include huge {
+      max-width: 289px;
+      height: 217px;
+    }
+    @include large {
+      max-width: 210px;
+      height: 157px;
+    }
+    @include medium {
+      max-width: 240px;
+      height: 180px;
+    }
+    @include small {
+      max-width: 400px;
+      min-height: 251px;
     }
   }
 }
 
 
 /* About */
-#about {
-  .container {
-    padding: 0 15px 0;
-  }
+#about .container {
+  padding: 0 15px 0;
 }
 
-#about .grid {
+.grid {
   position: relative;
-  max-width: 1140px;
   width: 100%;
-  &:before{
+  &:before {
     content: '';
     position: absolute;
-    top: 0;
     left: 50%;
-    transform: translateX(-50%);
     height: 100%;
     width: 2px;
     background-color: $border;
     z-index: -1;
+    @include medium {
+      left: 40px;
+    }
   }
 }
 
@@ -360,53 +510,97 @@ header {
   display: flex;
   justify-content: flex-end;
   text-align: right;
+  @include medium {
+    margin-bottom: 50px;
+    justify-content: flex-start;
+    text-align: left;
+  }
   &:last-child {
     justify-content: center;
     margin-bottom: 0;
     p {
-      display: block;
-      width: 152px;
-      height: 152px;
-      border-radius: 50%;
-      background-color: $logo;
-      color: $white;
-      font-size: 1.125rem;
-      line-height: 26px;
-      padding: 35px 30px;
-      text-align: center;
-      font-weight: bold;
+      @include flex-align;
+      @include round-img(156px);
+      padding: 0 30px;
+      background-color: $link;
       z-index: 5;
+      @include huge {
+        @include round-img(136px);
+      }
+      @include large {
+        @include round-img(86px);
+        padding: 0 10px;
+      }
+      @include medium {
+        @include round-img(66px);
+        padding: 0 10px;
+      }
+    }
+    @include medium {
+      justify-content: flex-start;
     }
   }
   .border {
-    width: 166px;
-    height: 166px;
     border: 7px solid $border;
-    border-radius: 50%;
+    @include round-img(170px);
     .img-round {
-      width: 152px;
-      height: 152px;
-      border-radius: 50%;
+      @include round-img(156px);
+    }
+    @include huge {
+      @include round-img(150px);
+      .img-round {
+        @include round-img(136px);
+      }
+    }
+    @include large {
+      @include round-img(100px);
+      .img-round {
+        @include round-img(86px);
+      }
+    }
+    @include medium {
+      @include round-img(80px);
+      .img-round {
+        @include round-img(66px);
+      }
     }
   }
   .img-info {
     width: 470px;
-    display:inline-block;
     padding: 0 20px 20px 100px;
     h3:last-of-type {
       margin: 8px 0;
     }
+    @include huge {
+      width: 391px;
+      padding: 0 20px 20px;
+    }
+    @include large {
+      width: 295px;
+      padding: 0 30px 20px;
+    }
+    @include medium {
+      width: 100%;
+      padding: 0 20px;
+    }
   }
 }
 
-.row:nth-of-type(even) .img-info {
-  padding-left: 20px;
-  padding-right: 100px;
-  text-align: left;
-}
-
-.row:nth-of-type(odd) {
-  flex-direction: row-reverse;
+@include min-width($medium) {
+  .row:nth-of-type(even) .img-info {
+    padding-left: 20px;
+    padding-right: 100px;
+    text-align: left;
+    @include huge {
+      padding-right: 20px;
+    }
+    @include large {
+      padding-right: 30px;
+    }
+  }
+  .row:nth-of-type(odd) {
+    flex-direction: row-reverse;
+  }
 }
 
 
@@ -421,22 +615,26 @@ header {
     p {
       margin-bottom: 16px;
     }
+    @include medium {
+      width: 100%;
+    }
   }
   .border {
     margin: 0 auto;
-    width: 225px;
-    height: 225px;
+    @include round-img(225px);
     border: 5px solid white;
-    border-radius: 50%;
   }
   img {
-    border-radius: 50%;
-    width: 215px;
+    @include round-img(215px);
   }
   #desc {
     display: inline-block;
     margin: 0 18%;
     margin-bottom: 16px;
+    @include large {
+      margin: 0 auto;
+      padding: 0 15px 15px;
+    }
   }
 }
 
@@ -444,23 +642,16 @@ header {
   display: flex;
   justify-content: center;
   a {
+    @include round-img(50px);
     display: block;
-    height: 50px;
-    width: 50px;
     background-color: $dark-grey;
-    border-radius: 50%;
     margin-right: 12px;
     transition: .4s;
     &:last-child {
       margin-right: 0px;
     }
     &:hover {
-      background-color: $logo;
-    }
-    i {
-      margin-top: 15px;
-      font-size: 20px;
-      color: $dark-white;
+      background-color: $link;
     }
   }
 }
@@ -470,8 +661,22 @@ header {
 #sponsor {
   background-color: white;
   height: 146px;
-  img {
-    margin: 0 42px;
+  @include flex-align;
+  justify-content: space-around;
+  @include min-max($medium, $large) {
+    img {
+      width: 150px;
+      height: 37px;
+    }
+  }
+  @include medium {
+    flex-wrap: wrap;
+  }
+  @include small {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    height: 296px;
   }
 }
 
@@ -489,7 +694,7 @@ header {
     border: 1px solid white;
     &:focus {
       outline: none;
-      border-color: $logo;
+      border-color: $link;
     }
   }
   textarea {
@@ -500,20 +705,26 @@ header {
 #contact {
   @include backImage(800px, "../img/map-image.png");
   background-color: $dark-grey;
+  @include medium {
+    @include backImage(972px, "../img/map-image.png");
+  }
 }
 
 ::placeholder {
-  color: #CED4DD;
+  color: $placeholder;
   letter-spacing: 1px;
+}
+
+@include medium {
+  .col1-2 {
+    width: 100%;
+  }
 }
 
 
 /* Footer */
 footer {
   height: 100px;
-  .container {
-    height: 50px;
-  }
   .col1-3 {
     display: flex;
     justify-content: center;
@@ -525,5 +736,78 @@ footer {
       margin-left: 15px;
     }
   }
+  @include min-max($medium, $large) {
+    height: 130px;
+    #copyright {
+      line-height: 2;
+    }
+  }
+  @include medium {
+    height: 180px;
+    .col1-3 {
+      width: 100%;
+    }
+    .socials {
+      flex-direction: row;
+    }
+  }
 }
 
+
+// portfolio pop-up window
+#page-mask {
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+#pop-up {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: $white;
+  margin: 15px;
+  z-index: 101;
+  overflow-y: auto;
+  padding: 100px 0;
+  button {
+    color: white;
+    background-color: $link;
+    border: none;
+    border-radius: 5px;
+    padding: 6px 12px;
+    line-height: 1.75;
+    cursor: pointer;
+    &:hover {
+      background-color: $button-hover;
+    }
+    &:focus {
+      outline: none;
+      box-shadow: rgba(254, 209, 55, .5) 0 0 0 3px;
+    }
+  }
+}
+
+.dialog-container {
+  max-width: 760px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 16px 30px;
+  @include huge {
+    max-width: 640px;
+  }
+  .subheading {
+    margin: 20px 0 30px 0;
+  }
+  img {
+    width: 100%;
+    max-width: 698px;
+  }
+  p, img,
+  ul li:last-child {
+    margin-bottom: 30px;
+  }
+}
