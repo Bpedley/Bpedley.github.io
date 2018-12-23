@@ -87,9 +87,11 @@ $(document).ready(function(){
     var target = this.hash;
     var $target = $(target);
     
-    menuItems.style.overflow = "hidden";
-    nav.style.height = "54px";
-
+    if (!menu.hidden) {
+      menuItems.style.overflow = "hidden";
+      nav.style.height = "54px";
+    }
+    
     $('html, body').animate({
       'scrollTop': $target.offset().top - 54
     }, 1000, 'swing');
