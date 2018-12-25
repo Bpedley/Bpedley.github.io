@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.5;
+  font: 1.2rem sans-serif;
+}
+
+body {
+  background-color: #092B40;
+  color: white;
+  text-align: center;
+  padding: 100px 0;
+}
+
+a {
+  font-size: 1.4rem;
+  color: white;
+  text-decoration: none;
+}
+
+#article-link {
+  border: 5px solid #D96F32;
+  border-radius: 50px;
+  padding: 10px 20px;
+  width: 350px;
+  background-color: #092B40;
+  caret-color: white;
+  color: white;
+}
+
+#article-link:focus {
+  outline: none;
+}
+
+.search-result {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.article {
+  background-color: white;
+  color: black;
+  margin: 10px;
+  padding: 40px 50px;
+  text-align: justify;
+  cursor: pointer;
+}
+
+.article h3 {
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+input {
+  margin: 30px 0;
+}
+
+.search-error {
+  background-color: white;
+  color: rgb(173, 60, 60);
+  margin: 10px;
+  padding: 20px 40px;
+  text-align: center;
+}
