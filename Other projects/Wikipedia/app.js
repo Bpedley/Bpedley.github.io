@@ -1,6 +1,6 @@
 "use strict";
 
-let wikiApi = "https://ru.wikipedia.org/w/api.php?action=opensearch&search=";
+let wikiApi = "https://ru.wikipedia.org/w/api.php?action=opensearch&origin=*&search=";
 let searchBar = document.querySelector("#article-link");
 let searchResultDiv = document.querySelector(".search-result");
 let hint = document.querySelector("#hint");
@@ -34,7 +34,6 @@ function getData() {
     let data = JSON.parse(this.response);
     // if no errors
     if (request.status >= 200 && request.status < 400) {
-      console.log(data);
       hint.hidden = true;
       // if result dont have data
       if (data[1].length == 1) {
