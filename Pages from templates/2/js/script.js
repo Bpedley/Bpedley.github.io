@@ -214,12 +214,15 @@ function highlight(node) {
   popUp.style.top = window.pageYOffset + "px";
   popUp.style.height = document.documentElement.clientHeight - 30 + "px";
 
+  navDiv.hidden = true;
   popUp.hidden = false;
+  popUp.scrollTo(0, 0);
 }
 
 
 // close window when click 'close' button inside modal
 closeModal.addEventListener("click", () => {
+  navDiv.hidden = false;
   popUp.hidden = true;
   pageMask.hidden = true;
   document.body.style.overflow = "";
