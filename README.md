@@ -6,7 +6,8 @@
 
 **Other projects:**
 - Digital clock https://bpedley.github.io/Other%20projects/Clocks-JS/
-- Temperature app https://bpedley.github.io/Other%20projects/Temperature%20app/
+- Temperature app https://bpedley.github.io/Other%20projects/Weather%20app/
+- Wikipedia search app https://bpedley.github.io/Other%20projects/Wikipedia/
 
 **Pages built from templates including all features:**
 - Landing Page https://bpedley.github.io/Pages%20from%20templates/1/
