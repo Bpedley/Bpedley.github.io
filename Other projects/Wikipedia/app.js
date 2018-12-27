@@ -12,11 +12,13 @@ searchBar.addEventListener("keypress", (e) => {
   if (key === 13) {
     // if div with articles already in document, then delete all data
     if (searchResultDiv.childNodes) {
-      hint.hidden = false;
       searchResultDiv.innerHTML = "";
     }
     // do nothing when input field is empty
-    if (searchBar.value === "") return;
+    if (searchBar.value === "") {
+      hint.hidden = false;
+      return;
+    }
     // call function and get data
     getData();
   }
@@ -36,7 +38,7 @@ function getData() {
     if (request.status >= 200 && request.status < 400) {
       hint.hidden = true;
       // if result dont have data
-      if (data[1].length == 1) {
+      if (!data[1].length) {
         let searchError = document.createElement("div");
         searchError.className = "search-error";
         searchError.textContent = `Не могу найти статьи всключающие ${searchBar.value}, повторите поиск.`;
