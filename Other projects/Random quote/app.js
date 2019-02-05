@@ -42,7 +42,7 @@ function setContent() {
 }
 
 // get data using http request
-function getQuotes(url) {
+function getQuotes(url, callback) {
   // Create a request variable and assign a new XMLHttpRequest object to it.
   let request = new XMLHttpRequest();
   // Open a new connection, using the GET request on the URL endpoint
@@ -50,6 +50,8 @@ function getQuotes(url) {
   request.onload = () => {
     if (request.status >= 200 && request.status < 400) {
       data = JSON.parse(request.responseText);
+      // call setContent function
+      callback();
     } else {
       // if error
       console.log("Error happened");
@@ -70,6 +72,5 @@ newQuoteButton.addEventListener("click", setContent);
 
 // page loads
 document.addEventListener("DOMContentLoaded", () => {
-  getQuotes(url);
-  setTimeout(setContent, 500);
+  getQuotes(url, setContent);
 });
