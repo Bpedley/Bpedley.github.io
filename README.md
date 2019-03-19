@@ -19,5 +19,5 @@
   * подсвечивания пунктов навигации при прокрутки сайта
   * скрытия навигации при малой ширине окна браузера и появления кнопки меню при клике на которую плавно выдвигаются пункты navbar'a
   * при клике на картинки в секции портфолио появляется модальное окно с информацией
-  * [Stylish Portfolio](https://bpedley.github.io/Pages%20from%20templates/3/)
+* [Stylish Portfolio](https://bpedley.github.io/Pages%20from%20templates/3/)
 **[Репозиторий с решением задач и кодом c туториалов](https://github.com/Bpedley/JS-exercises)**
