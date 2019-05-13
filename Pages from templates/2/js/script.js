@@ -12,8 +12,7 @@ let mainNavLinks = document.querySelectorAll("#nav-links li a");
 let mainSections = document.querySelectorAll("section");
 let popUp = document.querySelector("#pop-up");
 let closeModal = document.querySelector("#pop-up button");
-let windowWidth, scrolled, lastId;
-let cur = [];
+let windowWidth, scrolled;
 
 
 // apply new styles when pageY 200px or above when refreshing page
@@ -24,15 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
     navDiv.style.backgroundColor = "#212529";
     nav.style.height = "54px";
     logo.style.fontSize = "1.25rem";
-  }
-
-  if (windowWidth < 992) {
-    menu.hidden = false;
-    navDiv.style.backgroundColor = "#212529";
-    nav.style.height = "54px";
-    logo.style.fontSize = "1.25rem";
-  } else {
-    menu.hidden = true;
   }
 });
 
@@ -87,92 +77,10 @@ $(document).ready(function(){
     var target = this.hash;
     var $target = $(target);
     
-    if (!menu.hidden) {
-      menuItems.style.overflow = "hidden";
-      nav.style.height = "54px";
-    }
-    
     $('html, body').animate({
       'scrollTop': $target.offset().top - 54
     }, 1000, 'swing');
   });
-});
-
-
-// when resize browser window apply some styles for navbar
-window.onresize = function() {
-  windowWidth = window.innerWidth;
-  scrolled = window.pageYOffset || document.documentElement.scrollTop;
-  
-  popUp.style.height = document.documentElement.clientHeight - 30 + "px";
-
-  if (windowWidth > 992 && menuItems.style.overflow == "hidden" && scrolled > 200) {
-    menu.hidden = true;
-  } else if (windowWidth > 992 && menuItems.style.overflow == "hidden" && scrolled < 200) {
-    menu.hidden = true;
-    navDiv.style.backgroundColor = "";
-    nav.style.height = "";
-    logo.style.fontSize = "";
-  } else if (windowWidth > 992 && menuItems.style.overflow == "visible" && scrolled < 200) {
-    menuItems.style.overflow == "hidden";
-    menu.hidden = true;
-    navDiv.style.backgroundColor = "";
-    nav.style.height = "";
-    logo.style.fontSize = "";
-  } else if (windowWidth > 992 && menuItems.style.overflow == "visible" && scrolled > 200) {
-    menuItems.style.overflow == "hidden";
-    menu.hidden = true;
-    navDiv.style.backgroundColor = "#212529";
-    nav.style.height = "54px";
-    logo.style.fontSize = "1.25rem";
-  }
-
-  if (windowWidth < 992 && menuItems.style.overflow == "hidden") {
-    menu.hidden = false;
-    navDiv.style.backgroundColor = "#212529";
-    nav.style.height = "54px";
-    logo.style.fontSize = "1.25rem";
-    nav.style.transition = "";
-  } else if (windowWidth < 992 && menuItems.style.overflow == "visible") {
-    menuItems.style.overflow == "visible";
-    menu.hidden = false;
-    navDiv.style.backgroundColor = "#212529";
-    logo.style.fontSize = "1.25rem";
-    nav.style.height = "320px";
-    nav.style.transition = "";
-  }
-
-  if (windowWidth < 992 && !menuItems.style.overflow) {
-    navDiv.style.backgroundColor = "#212529";
-    nav.style.height = "54px";
-    logo.style.fontSize = "1.25rem";
-    menu.hidden = false;
-  } else if (windowWidth > 992 && !menuItems.style.overflow && scrolled < 200) {
-    navDiv.style.backgroundColor = "";
-    nav.style.height = "";
-    logo.style.fontSize = "";
-    menu.hidden = true;
-  } else if (windowWidth > 992 && !menuItems.style.overflow && scrolled > 200) {
-    navDiv.style.backgroundColor = "#212529";
-    nav.style.height = "54px";
-    logo.style.fontSize = "1.25rem";
-    menu.hidden = true;
-  }
-};
-
-
-// add slide down animation when clicking menu button and hide when already clicked
-menu.addEventListener("click", () => {
-
-  if (!menuItems.style.overflow || menuItems.style.overflow == "hidden") {
-    nav.style.transition = ".5s";
-    menuItems.style.overflow = "visible";
-    nav.style.height = "320px";
-  } else {
-    nav.style.transition = ".5s";
-    menuItems.style.overflow = "hidden";
-    nav.style.height = "54px";
-  }
 });
 
 
@@ -227,3 +135,39 @@ closeModal.addEventListener("click", () => {
   pageMask.hidden = true;
   document.body.style.overflow = "";
 });
+
+
+// show menu items on menu click
+menu.addEventListener("click", function() {
+  if (!menuItems.style.top || menuItems.style.top != "54px") {
+    menuItems.style.top = "54px";
+  } else {
+    menuItems.style.top = "-255px";
+  }
+})
+
+
+// close menu when click on menu item
+menuItems.addEventListener("click", function(e) {
+  const link = e.target;
+  if (link.tagName == "A") {
+    menuItems.style.top = "-255px";
+  }
+})
+
+
+// change nav style on window resize
+window.onresize = function() {
+  windowWidth = window.innerWidth;
+  scrolled = window.pageYOffset || document.documentElement.scrollTop;
+  
+  if (windowWidth > 992 && scrolled > 200) {
+    navDiv.style.backgroundColor = "#212529";
+    nav.style.height = "54px";
+    logo.style.fontSize = "1.25rem";
+  } else {
+    navDiv.style.backgroundColor = "";
+    nav.style.height = "";
+    logo.style.fontSize = "";
+  }
+};
