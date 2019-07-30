@@ -12,8 +12,9 @@ let mainNavLinks = document.querySelectorAll("#nav-links li a");
 let mainSections = document.querySelectorAll("section");
 let popUp = document.querySelector("#pop-up");
 let closeModal = document.querySelector("#pop-up button");
+let validate = document.querySelector("#validate");
+let form = document.querySelector(".form");
 let windowWidth, scrolled;
-
 
 // apply new styles when pageY 200px or above when refreshing page
 document.addEventListener("DOMContentLoaded", () => {
@@ -26,14 +27,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-
 // apply styles when scrolled and document height bellow 200px then delete applied styles
 window.onscroll = function() {
   scrolled = window.pageYOffset || document.documentElement.scrollTop;
   windowWidth = window.innerWidth;
 
   if (windowWidth > 992) {
-
     if (scrolled >= 200) {
       navDiv.style.backgroundColor = "#212529";
       nav.style.height = "54px";
@@ -46,8 +45,7 @@ window.onscroll = function() {
       logo.style.fontSize = "";
     }
   }
-}
-
+};
 
 // navbar menu highlight on scroll
 window.addEventListener("scroll", event => {
@@ -68,40 +66,35 @@ window.addEventListener("scroll", event => {
   });
 });
 
-
 // smooth scroll animation on menu items
-$(document).ready(function(){
-  $('#nav-links a[href^="#"], .button').on('click', function (e) {
+$(document).ready(function() {
+  $('#nav-links a[href^="#"], .button').on("click", function(e) {
     e.preventDefault();
 
     var target = this.hash;
     var $target = $(target);
-    
-    $('html, body').animate({
-      'scrollTop': $target.offset().top - 54
-    }, 1000, 'swing');
+    $("html, body").animate(
+      { scrollTop: $target.offset().top - 54 },
+      1000,
+      "swing"
+    );
   });
 });
-
 
 // add modal window pop-up when clicking on images
 portfolio.onclick = function(e) {
   // prevent link default state
   e.preventDefault();
-
   let target = e.target;
-  let a = target.closest('a');
+  let a = target.closest("a");
   // click outside a elements
   if (!a) return;
   // click on a elements outside portfolio section
   if (!portfolio.contains(a)) return;
-  
   pageMask.hidden = false;
   document.body.style.overflow = "hidden";
- 
   highlight(a);
-}
-
+};
 
 // add information and some styles to modal pop-up
 function highlight(node) {
@@ -127,7 +120,6 @@ function highlight(node) {
   popUp.scrollTo(0, 0);
 }
 
-
 // close window when click 'close' button inside modal
 closeModal.addEventListener("click", () => {
   navDiv.hidden = false;
@@ -136,7 +128,6 @@ closeModal.addEventListener("click", () => {
   document.body.style.overflow = "";
 });
 
-
 // show menu items on menu click
 menu.addEventListener("click", function() {
   if (!menuItems.style.top || menuItems.style.top != "54px") {
@@ -144,8 +135,7 @@ menu.addEventListener("click", function() {
   } else {
     menuItems.style.top = "-255px";
   }
-})
-
+});
 
 // close menu when click on menu item
 menuItems.addEventListener("click", function(e) {
@@ -153,14 +143,12 @@ menuItems.addEventListener("click", function(e) {
   if (link.tagName == "A") {
     menuItems.style.top = "-255px";
   }
-})
-
+});
 
 // change nav style on window resize
 window.onresize = function() {
   windowWidth = window.innerWidth;
   scrolled = window.pageYOffset || document.documentElement.scrollTop;
-  
   if (windowWidth > 992 && scrolled > 200) {
     navDiv.style.backgroundColor = "#212529";
     nav.style.height = "54px";
@@ -171,3 +159,49 @@ window.onresize = function() {
     logo.style.fontSize = "";
   }
 };
+
+validate.addEventListener("click", validateForm);
+
+function validateForm() {
+  const email = form.elements.email;
+  const message = form.elements.message;
+  const name = form.elements.name;
+  const phone = form.elements.phone;
+
+  resetError(email.parentNode);
+  if (!email.value) {
+    showError(email.parentNode, "Please enter your email address.");
+  } else if (!/\S+@\S+\.\S+/.test(email.value)) {
+    showError(email.parentNode, "Not a valid email address.");
+  }
+
+  resetError(message.parentNode);
+  if (!message.value) {
+    showError(message.parentNode, "Please enter a message.");
+  }
+
+  resetError(name.parentNode);
+  if (!name.value) {
+    showError(name.parentNode, "Please enter your name.");
+  }
+
+  resetError(phone.parentNode);
+  if (!phone.value) {
+    showError(phone.parentNode, "Please enter your phone number.");
+  }
+}
+
+function showError(container, errorMessage) {
+  let errorUl = document.createElement("ul");
+  errorUl.className = "error";
+  let errorLi = document.createElement("li");
+  errorLi.textContent = errorMessage;
+  errorUl.append(errorLi);
+  container.append(errorUl);
+}
+
+function resetError(container) {
+  if (container.lastChild.className == "error") {
+    container.removeChild(container.lastChild);
+  }
+}

@@ -238,17 +238,25 @@
         <h2>Contact us</h2>
         <p class="subheading">Lorem ipsum dolor sit amet consectetur.</p>
       </div><!--section-info-->
-      <form class="form" action="#" method="GET">
+      <form class="form">
         <div class="col1-2 contacts">
-          <input type="text" name="name" maxlength="32" pattern="[A-Za-z]{1,32}" placeholder="Your Name *" required>
-          <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Your Email *" required>
-          <input type="tel" name="phone" pattern="^[0-9-+s()]*$" placeholder="Your Phone *" required>
+          <div>
+            <input type="text" name="name" placeholder="Your Name *">
+          </div>
+          <div>
+            <input type="email" name="email" placeholder="Your Email *">
+          </div>
+          <div>
+            <input type="tel" name="phone" placeholder="Your Phone *">
+          </div>
         </div><!--col1-2
         --><div class="col1-2 contacts">
-          <textarea name="message" placeholder="Your Message *"></textarea>
+          <div>
+            <textarea name="message" placeholder="Your Message *"></textarea>
+          </div>
         </div><!--col1-2-->
       </form><!--form-->
-      <a href="#" class="button">Send message</a>
+      <input type='button' class="button" id='validate' value="Send message"/>
     </div><!--container-->
   </section>
 

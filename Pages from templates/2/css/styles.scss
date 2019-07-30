@@ -2,14 +2,15 @@
 @import "_normalize";
 @import "_variables";
 @import "_mixins";
-@import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
-@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+@import url("https://fonts.googleapis.com/css?family=Kaushan+Script");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab");
 @font-face {
-  font-family: 'droid_serif';
-  src: local("droid_serif"), url('../fonts/droidserif_italic_macroman/DroidSerif-Italic-webfont.woff') format('woff');
+  font-family: "droid_serif";
+  src: local("droid_serif"),
+    url("../fonts/droidserif_italic_macroman/DroidSerif-Italic-webfont.woff")
+      format("woff");
 }
-
 
 /* Base */
 * {
@@ -19,7 +20,7 @@
 }
 
 .container {
-  width: 100%;  
+  width: 100%;
   max-width: 1140px;
   text-align: center;
   margin: 0 auto;
@@ -74,7 +75,6 @@ h2 {
   margin-bottom: 75px;
 }
 
-
 /* Typography */
 * {
   font-family: $montserrat;
@@ -111,7 +111,8 @@ button {
 
 input,
 textarea,
-p {
+p,
+.error li {
   font-family: $roboto;
 }
 
@@ -120,7 +121,8 @@ p {
   line-height: 2;
 }
 
-h1, h2,
+h1,
+h2,
 .button,
 #nav-links {
   text-transform: uppercase;
@@ -201,7 +203,8 @@ p {
 }
 
 footer {
-  #copyright, li {
+  #copyright,
+  li {
     line-height: 40px;
   }
   a {
@@ -243,7 +246,9 @@ footer {
   .subheading {
     color: $light-grey;
   }
-  ul li, p, h2 {
+  ul li,
+  p,
+  h2 {
     color: $dark-grey;
   }
   h2 {
@@ -257,7 +262,6 @@ footer {
     line-height: 1.5;
   }
 }
-
 
 /* Buttons */
 .button {
@@ -273,7 +277,6 @@ footer {
   }
 }
 
-
 /* Navbar */
 #navbar {
   position: fixed;
@@ -281,7 +284,7 @@ footer {
   z-index: 100;
   @include large {
     .container {
-      width: 100%;  
+      width: 100%;
       max-width: 1140px;
     }
   }
@@ -376,17 +379,16 @@ nav {
   }
 }
 
-
 /* Header */
 header {
-  @include backImage(760px ,"../img/header-bg.jpg");
+  @include backImage(760px, "../img/header-bg.jpg");
   padding: 300px 0 200px;
   background-size: cover;
   @include large {
-    @include backImage(834px ,"../img/header-bg.jpg");
+    @include backImage(834px, "../img/header-bg.jpg");
   }
   @include medium {
-    @include backImage(491px ,"../img/header-bg.jpg");
+    @include backImage(491px, "../img/header-bg.jpg");
     padding: 150px 0 100px;
   }
 }
@@ -435,11 +437,10 @@ header {
   }
 }
 
-
 /* Portfolio */
 @for $i from 1 through 6 {
   #thumbnails-#{$i} {
-    background: rgba($link, 0) url("../img/portfolio/0" + $i + "-thumbnail.jpg");
+    background: rgba($link, 0) url("../img/portfolio/0"+$i+"-thumbnail.jpg");
   }
 }
 
@@ -482,9 +483,9 @@ header {
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
-    transition: background-color .4s;
+    transition: background-color 0.4s;
     &:hover {
-      background-color: rgba($link, .9);
+      background-color: rgba($link, 0.9);
     }
     &:before {
       position: absolute;
@@ -495,7 +496,7 @@ header {
       bottom: 0;
       left: 0;
       background-color: inherit;
-      content: ' ';
+      content: " ";
     }
     @include huge {
       max-width: 289px;
@@ -516,7 +517,6 @@ header {
   }
 }
 
-
 /* About */
 #about .container {
   padding: 0 15px 0;
@@ -526,7 +526,7 @@ header {
   position: relative;
   width: 100%;
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     left: 50%;
     height: 100%;
@@ -637,7 +637,6 @@ header {
   }
 }
 
-
 /* Team */
 #team {
   background-color: $dark-white;
@@ -680,7 +679,7 @@ header {
     display: block;
     background-color: $dark-grey;
     margin-right: 12px;
-    transition: .4s;
+    transition: 0.4s;
     &:last-child {
       margin-right: 0px;
     }
@@ -689,7 +688,6 @@ header {
     }
   }
 }
-
 
 /* Sponsors */
 #sponsor {
@@ -714,7 +712,6 @@ header {
   }
 }
 
-
 /* Contact */
 .contacts {
   display: flex;
@@ -722,10 +719,11 @@ header {
   padding: 0 15px;
   input,
   textarea {
+    margin-top: 25px;
     padding: 20px;
-    margin-bottom: 25px;
     border-radius: 5px;
     border: 1px solid white;
+    width: 100%;
     &:focus {
       outline: none;
       border-color: $link;
@@ -737,10 +735,35 @@ header {
 }
 
 #contact {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .button {
+    margin-top: 20px;
+    width: 231px;
+    align-self: center;
+  }
+  .subheading {
+    margin-bottom: 53px;
+  }
   @include backImage(800px, "../img/map-image.png");
   background-color: $dark-grey;
   @include medium {
     @include backImage(972px, "../img/map-image.png");
+  }
+}
+
+.error {
+  color: #dc3545;
+  li {
+    margin: 0;
+    padding: 0;
+    margin-left: 20px;
+    text-align: left;
+    line-height: 1.75;
+    list-style-type: disc;
+    list-style-position: inside;
   }
 }
 
@@ -754,7 +777,6 @@ header {
     width: 100%;
   }
 }
-
 
 /* Footer */
 footer {
@@ -786,7 +808,6 @@ footer {
     }
   }
 }
-
 
 // portfolio pop-up window
 #page-mask {
@@ -820,7 +841,7 @@ footer {
     }
     &:focus {
       outline: none;
-      box-shadow: rgba(254, 209, 55, .5) 0 0 0 3px;
+      box-shadow: rgba(254, 209, 55, 0.5) 0 0 0 3px;
     }
   }
 }
@@ -840,7 +861,8 @@ footer {
     width: 100%;
     max-width: 698px;
   }
-  p, img,
+  p,
+  img,
   ul li:last-child {
     margin-bottom: 30px;
   }
