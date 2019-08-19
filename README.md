@@ -1,3 +1,5 @@
+*Все проекты хостятся на GitHub Pages*
+
 **Проекты сертефиката FreeCodeCamp Responsive Web Design Certification:**
 * [Tribute Page](https://bpedley.github.io/FCC/Tribute%20page/) - страница дани
 * [Survey Form](https://bpedley.github.io//FCC/Survey%20page/) - форма анкеты
@@ -11,7 +13,7 @@
 * [Калькулятор](https://bpedley.github.io/Other%20projects/Calculator/) - простой калькулятор с кнопками чисел, операторов и кнопкой сброса. Максимальная допустимая длина выражения - 17 символов.
 * [Случайная цитата](https://bpedley.github.io/Other%20projects/Random%20quote/) - при загрузки страницы выбирает случайный цвет для фона, текста и иконок и случайную цитату из json, загруженного с помощью http-запроса. При нажатии на кнопку "Новая цитата" так же меняются цвета и текст цитаты. При нажатии кнопки твиттера открывается новая вкладка с ретвитом текущей цитаты.
 
-**Страницы построенные с шаблонов, включающие все функции:**
+**Страницы построенные с шаблонов:**
 * [Landing Page](https://bpedley.github.io/Pages%20from%20templates/1/) ([Оригинал](https://blackrockdigital.github.io/startbootstrap-landing-page/)) - построение сайта с помощью float и flexbox, включая hover-анимации, fontawesome icons и media queries для изменения вида сайта на разных разрешениях экрана. При построении использовался CSS-препроцессор SASS.
 * [Agency](https://bpedley.github.io/Pages%20from%20templates/2/) ([Оригинал](https://blackrockdigital.github.io/startbootstrap-agency/)) - построение сайта с помощью float и flexbox, fontawesome icons, media queries. При построении использовался CSS-препроцессор SASS. Так же использовался JavaScript для:
   * плавного скроллинга при нажатии на пункты навигации
