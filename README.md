@@ -26,4 +26,4 @@
 
 **[Репозиторий с решением алгоритмических задач и кодом c туториалов по React, Redux, Webpack и т.д.](https://github.com/Bpedley/JS-exercises)**
 
-**[Репозиторий с примерами использования Redux и middleware для асинхронных запросов](https://github.com/Bpedley/JS-exercises)**
+**[Репозиторий с примерами использования Redux и middleware для асинхронных запросов](https://github.com/Bpedley/Redux-use-examples)**
