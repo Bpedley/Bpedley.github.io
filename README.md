@@ -1,10 +1,10 @@
 *Все проекты хостятся на GitHub Pages*
 
 **Проекты сертефиката FreeCodeCamp Responsive Web Design Certification:**
-* [Tribute Page](https://bpedley.github.io/FCC/Tribute%20page/) - страница дани
-* [Survey Form](https://bpedley.github.io//FCC/Survey%20page/) - форма анкеты
-* [Product Landing Page](https://bpedley.github.io//FCC/Product%20page/) - страница продукта
-* [Technical Documentation Page](https://bpedley.github.io/FCC/Documentation%20page/index.html) - страница технической документации
+* [Tribute Page](https://bpedley.github.io/FCC/Tribute%20page/)
+* [Survey Form](https://bpedley.github.io//FCC/Survey%20page/)
+* [Product Landing Page](https://bpedley.github.io//FCC/Product%20page/)
+* [Technical Documentation Page](https://bpedley.github.io/FCC/Documentation%20page/index.html)
 
 **Другие проекты:**
 * [Часы](https://bpedley.github.io/Other%20projects/Clocks-JS/)
