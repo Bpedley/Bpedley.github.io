@@ -59,7 +59,7 @@ function setContent() {
 
 // get data using fetch
 function getQuotes(url) {
-  return fetch(url).then(response => {
+  fetch(url).then(response => {
     response.json().then(json => {
       data = json.quotes;
       setContent();
