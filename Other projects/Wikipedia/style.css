@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: #092B40;
+  background-color: #092b40;
   color: white;
   text-align: center;
   padding: 100px 0;
@@ -20,11 +20,11 @@ a {
 }
 
 #article-link {
-  border: 5px solid #D96F32;
+  border: 5px solid #d96f32;
   border-radius: 50px;
   padding: 10px 20px;
   width: 350px;
-  background-color: #092B40;
+  background-color: #092b40;
   caret-color: white;
   color: white;
 }
@@ -42,7 +42,7 @@ a {
 .article {
   background-color: white;
   color: black;
-  margin: 10px;
+  margin: 15px 25px;
   padding: 40px 50px;
   text-align: justify;
   cursor: pointer;
@@ -63,4 +63,17 @@ input {
   margin: 10px;
   padding: 20px 40px;
   text-align: center;
+  border-radius: 50px;
+}
+
+#hint {
+  margin-top: 45px;
+}
+
+#random-article {
+  transition: color 0.4s;
+}
+
+#random-article:hover {
+  color: wheat;
 }
