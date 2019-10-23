@@ -2,7 +2,7 @@
 
 // api link without location
 const api =
-  "http://api.weatherstack.com/current?access_key=c3cdfa5da5270e01f1eb83a4d417a2cf&query=";
+  "https://cors-anywhere.herokuapp.com/http://api.weatherstack.com/current?access_key=c3cdfa5da5270e01f1eb83a4d417a2cf&query=";
 // format for date object
 const options = {
   weekday: "long",
