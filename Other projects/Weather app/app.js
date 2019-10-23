@@ -2,7 +2,7 @@
 
 // api link without location
 const api =
-  "https://api.apixu.com/v1/current.json?key=67782be5fbef412d9f1102825180712&q=";
+  "http://api.weatherstack.com/current?access_key=c3cdfa5da5270e01f1eb83a4d417a2cf&query=";
 // format for date object
 const options = {
   weekday: "long",
@@ -10,6 +10,7 @@ const options = {
   month: "long",
   day: "numeric"
 };
+let error;
 // get elements from html page
 const div = document.getElementById("result");
 const submit = document.getElementById("submit");
@@ -46,55 +47,64 @@ submit.addEventListener("click", () => {
   let city = document.getElementById("city").value;
   // check if input field value is empty
   if (city == "") {
-    let empty = document.createElement("p");
-    empty.textContent = `You didn't enter anything, try again.`;
-    div.appendChild(empty);
+    error = document.createElement("p");
+    error.textContent = `You didn't enter anything, try again.`;
+    div.appendChild(error);
+    return;
   }
   // full api link with location
   let url = api + city;
   // fetch url
-  return fetch(url)
+  fetch(url)
     .then(response => response.json())
     .then(data => {
-      // icon
-      iconImage.src = "" + data.current.condition.icon;
-      // temperature
-      temp.innerHTML = `Temperature: ${Math.round(
-        data.current.temp_c
-      )}<span id="celsius">&deg;</span>, ${data.current.condition.text}.`;
-      // feels like
-      feelsLike.innerHTML = `Feels like: ${Math.round(
-        data.current.feelslike_c
-      )}<span id="celsius">&deg;</span>.`;
-      // location
-      loc.textContent = `Location: ${data.location.country}, ${data.location.name}.`;
-      // date and time
-      let dateTime = data.location.localtime.split(" ");
-      let date = new Date(dateTime[0]);
-      let time = dateTime[1];
-      dateNow.textContent = `Current date: ${date.toLocaleDateString(
-        "en-US",
-        options
-      )}.`;
-      timeNow.textContent = `Current time: ${time}.`;
-      // wind speed
-      wind.textContent = `Wind speed: ${data.current.wind_kph} km/h.`;
-      // append elements to document
-      div.appendChild(divIcon);
-      div.appendChild(divInfo);
-      divIcon.appendChild(iconImage);
-      divInfo.appendChild(loc);
-      divInfo.appendChild(temp);
-      divInfo.appendChild(feelsLike);
-      divInfo.appendChild(wind);
-      divInfo.appendChild(timeNow);
-      divInfo.appendChild(dateNow);
+      addInfo(data);
+      appendElements();
     })
     .catch(err => {
-      console.log(err.message);
-      let error = document.createElement("p");
-      error.className = "error";
+      console.log(err);
+      error = document.createElement("p");
       error.textContent = `Can't find ${city}, try again.`;
       div.appendChild(error);
     });
 });
+
+//
+const addInfo = data => {
+  // icon
+  iconImage.src = "" + data.current.weather_icons[0];
+  // temperature
+  temp.innerHTML = `Temperature: ${Math.round(
+    data.current.temperature
+  )}<span id="celsius">&deg;</span>C.`;
+  // feels like
+  feelsLike.innerHTML = `Feels like: ${Math.round(
+    data.current.feelslike
+  )}<span id="celsius">&deg;</span>C.`;
+  // location
+  loc.textContent = `Location: ${data.location.country}, ${data.location.name}.`;
+  // date and time
+  let dateTime = data.location.localtime.split(" ");
+  let date = new Date(dateTime[0]);
+  let time = dateTime[1];
+  dateNow.textContent = `Current date: ${date.toLocaleDateString(
+    "en-US",
+    options
+  )}.`;
+  timeNow.textContent = `Current time: ${time}.`;
+  // wind speed
+  wind.textContent = `Wind speed: ${data.current.wind_speed} km/h.`;
+};
+
+// append elements to document
+const appendElements = () => {
+  div.appendChild(divIcon);
+  div.appendChild(divInfo);
+  divIcon.appendChild(iconImage);
+  divInfo.appendChild(loc);
+  divInfo.appendChild(temp);
+  divInfo.appendChild(feelsLike);
+  divInfo.appendChild(wind);
+  divInfo.appendChild(timeNow);
+  divInfo.appendChild(dateNow);
+};
