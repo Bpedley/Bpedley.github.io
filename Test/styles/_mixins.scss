@@ -1,0 +1,23 @@
+@mixin round-img($length) {
+  border-radius: 50%;
+  width: $length;
+  height: $length;
+}
+
+@mixin medium {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin medium-large {
+  @media screen and (max-width: 900px) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media screen and (max-width: 992px) {
+    @content;
+  }
+}

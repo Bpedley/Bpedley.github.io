@@ -1,0 +1,549 @@
+/* Import */
+@import "_variables";
+@import "_mixins";
+
+/* BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  scroll-behavior: smooth;
+}
+
+.content {
+  width: 100%;
+  max-width: 1040px;
+}
+
+.button {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: $white;
+  background-color: $button;
+  padding: 15px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $button-hover;
+  }
+}
+
+html {
+  scroll-padding-top: 54px; /* height of sticky header */
+}
+
+/* HEADER */
+header {
+  width: 100%;
+  display: flex;
+  height: 95px;
+  align-items: center;
+  position: fixed;
+  background-color: $white;
+  z-index: 11;
+  transition: height 0.3s;
+}
+
+.logo {
+  display: flex;
+  margin-left: 40px;
+  z-index: 1;
+
+  img {
+    width: 50px;
+    height: 50px;
+    transition: all 0.3s;
+  }
+}
+
+.logo-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: $grey;
+  margin-left: 15px;
+
+  .logo-name {
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
+
+nav {
+  margin-left: auto;
+  margin-right: 50px;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  text-transform: uppercase;
+  list-style-type: none;
+
+  li {
+    cursor: pointer;
+    margin-right: 6px;
+    transition: background-color 0.1s;
+
+    &:hover {
+      background-color: $button;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 12px 10px;
+      text-decoration: none;
+      color: $grey;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+
+  @include medium {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    height: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background-color: $white;
+    padding-top: 95px;
+
+    li {
+      width: 100%;
+    }
+  }
+}
+
+.position-after {
+  height: 54px;
+
+  .logo img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .nav-links {
+    @include medium {
+      padding-top: 54px;
+    }
+  }
+}
+
+/* BURGER BUTTON */
+.burger {
+  display: none;
+  position: absolute;
+  right: 40px;
+  font-size: 24px;
+  color: $grey;
+  opacity: 0.8;
+  z-index: 1;
+  cursor: pointer;
+
+  @include medium {
+    display: block;
+  }
+}
+
+/* INTRO */
+.intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(/images/Background.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 175px 0 85px;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+      font-size: 55px;
+      font-weight: 100;
+      color: $white;
+      margin-bottom: 40px;
+    }
+
+    span {
+      font-size: 55px;
+      font-weight: 700;
+    }
+
+    p {
+      max-width: 610px;
+      width: 100%;
+      font-size: 18px;
+      line-height: 24px;
+      color: $white;
+      font-weight: 100;
+      text-align: center;
+
+      @include medium {
+        padding: 0 60px;
+      }
+    }
+  }
+}
+
+.learn-more {
+  @extend .button;
+  text-decoration: none;
+  margin: 50px 0 40px;
+}
+
+.circle {
+  @include round-img(55px);
+  text-align: center;
+  background-color: $white;
+
+  i {
+    font-size: 50px;
+    color: #383433;
+  }
+}
+
+/* PORTFOLIO */
+.portfolio .content {
+  margin: auto;
+  text-align: center;
+
+  h2 {
+    font-size: 28px;
+    color: $grey;
+    margin: 55px 0 18px;
+  }
+
+  p {
+    font-size: 16px;
+    color: $grey;
+  }
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20px 25px 45px;
+
+  .btn {
+    @extend .button;
+    border: none;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .btn-active {
+    background-color: $button-hover;
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  grid-column-gap: 65px;
+  grid-row-gap: 35px;
+  justify-items: center;
+  margin: 0 60px 60px;
+}
+
+.container-item {
+  position: relative;
+  @include round-img(170px);
+  transition: background-color 0.3s;
+  cursor: pointer;
+
+  &::before {
+    @include round-img(40px);
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    content: "\f002";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    line-height: 40px;
+    opacity: 0;
+    color: $white;
+    background-color: black;
+    transition: opacity 0.2s ease-in-out;
+    transform: translate(-54%, -51%);
+  }
+
+  &:hover::before {
+    opacity: 0.4;
+  }
+
+  &:hover {
+    background-color: $item-hover;
+    transition: background-color 0.3s;
+  }
+
+  img {
+    position: relative;
+    @include round-img(170px);
+    z-index: -1;
+  }
+}
+
+/* ABOUT */
+.about {
+  background-color: $about-bg;
+  padding: 60px 0 75px;
+
+  .content {
+    margin: auto;
+    padding: 0 120px;
+    text-align: center;
+
+    h2,
+    & > p {
+      color: $white;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    & > p {
+      font-size: 16px;
+      margin-bottom: 45px;
+    }
+  }
+}
+
+.members {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  flex-wrap: wrap;
+  @include large {
+    flex-direction: column;
+  }
+}
+
+.members-item {
+  max-width: 220px;
+  width: 100%;
+  background-color: $white;
+  color: $grey;
+  text-align: center;
+  margin: 20px 10px;
+
+  &:hover {
+    .socials {
+      opacity: 0.8;
+    }
+  }
+
+  span {
+    display: block;
+    color: $grey;
+    font-style: italic;
+    margin: 5px 0 20px;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  h3 {
+    font-size: 18px;
+    color: $grey;
+  }
+
+  p {
+    line-height: 20px;
+    color: $grey;
+    text-align: left;
+  }
+}
+
+.member-info {
+  margin: 20px 10px;
+}
+
+.socials {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  background-color: $about-bg;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
+
+  a:hover {
+    background-color: $socials-hover;
+    transition: background-color 0.3s;
+  }
+
+  i {
+    line-height: 44px;
+    font-size: 29px;
+    color: $white;
+    padding: 5px 10px;
+    width: 45px;
+  }
+}
+
+.image-block {
+  position: relative;
+}
+
+/* Contact */
+.contact {
+  background-color: $contact-bg;
+
+  h2 {
+    font-size: 28px;
+    color: $grey;
+    margin-bottom: 18px;
+    text-align: center;
+  }
+
+  .content {
+    margin: auto;
+    padding: 50px 40px 60px;
+
+    & > div {
+      display: flex;
+      @include medium-large {
+        flex-direction: column;
+      }
+    }
+
+    & > p {
+      color: $grey;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+  }
+}
+
+.address {
+  max-width: 456px;
+  width: 100%;
+
+  i,
+  span {
+    line-height: 24px;
+    color: $grey;
+  }
+
+  #map {
+    margin-top: 10px;
+    height: 265px;
+  }
+
+  @include medium-large {
+    text-align: center;
+    margin: auto;
+  }
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 25px;
+  justify-content: space-between;
+
+  @include medium-large {
+    margin-right: 0;
+  }
+
+  button {
+    @extend .button;
+    border: none;
+    padding: 15px 30px;
+    margin-left: auto;
+
+    @include medium-large {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  }
+
+  input {
+    width: 48%;
+
+    @include large {
+      width: 100%;
+      margin-bottom: 12px;
+    }
+  }
+
+  textarea {
+    resize: none;
+    margin: 20px 0;
+
+    @include large {
+      margin: 0 0 20px;
+      height: 7em;
+    }
+  }
+
+  input,
+  textarea {
+    padding: 10px 15px;
+    border: 2px solid $form-border;
+    color: $grey;
+  }
+
+  & > textarea {
+    width: 100%;
+  }
+}
+
+/* FOOTER */
+footer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 87px;
+  color: $white;
+  padding: 0 35px;
+  background-color: $footer;
+}
+
+.scroll-up {
+  display: block;
+  width: 45px;
+  height: 45px;
+  margin-left: auto;
+  background-color: $button;
+  text-align: center;
+  cursor: pointer;
+
+  i {
+    font-size: 20px;
+    line-height: 45px;
+    color: $white;
+  }
+}
