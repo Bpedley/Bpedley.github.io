@@ -10,6 +10,7 @@
   font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 14px;
+  line-height: 1;
   scroll-behavior: smooth;
 }
 
@@ -59,6 +60,10 @@ header {
     width: 50px;
     height: 50px;
     transition: all 0.3s;
+  }
+
+  @include small {
+    margin-left: 20px;
   }
 }
 
@@ -160,6 +165,10 @@ nav {
   @include medium {
     display: block;
   }
+
+  @include small {
+    right: 20px;
+  }
 }
 
 /* INTRO */
@@ -183,11 +192,17 @@ nav {
       font-weight: 100;
       color: $white;
       margin-bottom: 40px;
+      @include small {
+        font-size: 40px;
+      }
     }
 
     span {
       font-size: 55px;
       font-weight: 700;
+      @include small {
+        font-size: 40px;
+      }
     }
 
     p {
@@ -201,6 +216,10 @@ nav {
 
       @include medium {
         padding: 0 60px;
+      }
+
+      @include small {
+        padding: 0 30px;
       }
     }
   }
@@ -219,6 +238,7 @@ nav {
 
   i {
     font-size: 50px;
+    padding-top: 5px;
     color: #383433;
   }
 }
@@ -259,6 +279,13 @@ nav {
   .btn-active {
     background-color: $button-hover;
   }
+
+  @include small {
+    flex-direction: column;
+    .btn {
+      margin-right: 0;
+    }
+  }
 }
 
 .container {
@@ -290,7 +317,7 @@ nav {
     color: $white;
     background-color: black;
     transition: opacity 0.2s ease-in-out;
-    transform: translate(-54%, -51%);
+    transform: translate(-51%, -53%);
   }
 
   &:hover::before {
@@ -319,6 +346,10 @@ nav {
     padding: 0 120px;
     text-align: center;
 
+    @include small {
+      padding: 0 40px;
+    }
+
     h2,
     & > p {
       color: $white;
@@ -340,9 +371,10 @@ nav {
   display: flex;
   justify-content: space-around;
   align-content: center;
-  flex-wrap: wrap;
-  @include large {
+
+  @include medium-large {
     flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -353,6 +385,10 @@ nav {
   color: $grey;
   text-align: center;
   margin: 20px 10px;
+
+  @include medium-large {
+    max-width: 350px;
+  }
 
   &:hover {
     .socials {
@@ -385,6 +421,9 @@ nav {
 
 .member-info {
   margin: 20px 10px;
+  @include medium-large {
+    margin: 20px 15px;
+  }
 }
 
 .socials {
@@ -536,9 +575,9 @@ footer {
   display: block;
   width: 45px;
   height: 45px;
-  margin-left: auto;
-  background-color: $button;
   text-align: center;
+  background-color: $button;
+  margin-left: auto;
   cursor: pointer;
 
   i {
