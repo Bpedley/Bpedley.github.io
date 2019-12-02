@@ -18,6 +18,7 @@
 * [Agency](https://bpedley.github.io/Pages%20from%20templates/2/) ([Оригинал](https://blackrockdigital.github.io/startbootstrap-agency/))
 * [Stylish Portfolio](https://bpedley.github.io/Pages%20from%20templates/3/) ([Оригинал](https://blackrockdigital.github.io/startbootstrap-stylish-portfolio/))
 * [Resume](https://bpedley.github.io/Pages%20from%20templates/4/) ([Оригинал](https://blackrockdigital.github.io/startbootstrap-resume/))
+* [Test Project](https://bpedley.github.io/Test/)
 
 **[Cards app(React + JSONPlaceholder api)](https://bpedley.github.io/jsonplaceholder-api-cards/),** код - https://github.com/Bpedley/jsonplaceholder-api-cards
 
