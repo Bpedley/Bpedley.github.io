@@ -1,6 +1,6 @@
 *Все проекты хостятся на GitHub Pages*
 
-**Проекты сертефиката FreeCodeCamp Responsive Web Design Certification:**
+**Проекты FreeCodeCamp Responsive Web Design Certification:**
 * [Tribute Page](https://bpedley.github.io/FCC/Tribute%20page/)
 * [Survey Form](https://bpedley.github.io//FCC/Survey%20page/)
 * [Product Landing Page](https://bpedley.github.io//FCC/Product%20page/)
@@ -13,15 +13,17 @@
 * [Калькулятор](https://bpedley.github.io/Other%20projects/Calculator/)
 * [Случайная цитата](https://bpedley.github.io/Other%20projects/Random%20quote/)
 
-**Страницы, построенные по шаблонам:**
-* [Landing Page](https://bpedley.github.io/Pages%20from%20templates/1/) ([Оригинал](https://blackrockdigital.github.io/startbootstrap-landing-page/))
-* [Agency](https://bpedley.github.io/Pages%20from%20templates/2/) ([Оригинал](https://blackrockdigital.github.io/startbootstrap-agency/))
-* [Stylish Portfolio](https://bpedley.github.io/Pages%20from%20templates/3/) ([Оригинал](https://blackrockdigital.github.io/startbootstrap-stylish-portfolio/))
-* [Resume](https://bpedley.github.io/Pages%20from%20templates/4/) ([Оригинал](https://blackrockdigital.github.io/startbootstrap-resume/))
+**Лендинги:**
+* [Landing Page](https://bpedley.github.io/Pages%20from%20templates/1/)
+* [Agency](https://bpedley.github.io/Pages%20from%20templates/2/)
+* [Stylish Portfolio](https://bpedley.github.io/Pages%20from%20templates/3/)
+* [Resume](https://bpedley.github.io/Pages%20from%20templates/4/)
 * [Test Project](https://bpedley.github.io/Test/)
 
-**[Cards app(React + JSONPlaceholder api)](https://bpedley.github.io/jsonplaceholder-api-cards/),** код - https://github.com/Bpedley/jsonplaceholder-api-cards
+**React:**
+* [Поиск ресторанов в выбранном городе с сортировкой результатов](https://github.com/Bpedley/Bpedley.github.io/tree/master/ravenous)
+* [Пример использования Redux и middleware для асинхронных запросов](https://github.com/Bpedley/Redux-use-examples)
+* [Cards app(React + JSONPlaceholder api)](https://bpedley.github.io/jsonplaceholder-api-cards/), код - https://github.com/Bpedley/jsonplaceholder-api-cards
+* [Построение таблицы из данных с api(фильтрация данных, добавление новой строки, появление инофрмации при клике на строку)](https://bpedley.github.io/frontend-javascript-test/), код - https://github.com/Bpedley/frontend-javascript-test
 
 **[Решение алгоритмических задач и кода по React, Redux, Webpack и т.д.](https://github.com/Bpedley/JS-exercises)**
-
-**[Примеры использования Redux и middleware для асинхронных запросов](https://github.com/Bpedley/Redux-use-examples)**
