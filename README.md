@@ -23,7 +23,7 @@
 
 **React:**
 * Код - [Поиск ресторанов в выбранном городе с сортировкой результатов](https://github.com/Bpedley/Bpedley.github.io/tree/master/ravenous)
-* Код - [Пример использования Redux и middleware для асинхронных запросов](https://github.com/Bpedley/Redux-use-examples)
+* [Использование React + Redux и middleware для асинхронных запросов](https://bpedley.github.io/Redux-use-examples/), [код](https://github.com/Bpedley/Redux-use-examples)
 * [Cards app(React + JSONPlaceholder api)](https://bpedley.github.io/jsonplaceholder-api-cards/), [код](https://github.com/Bpedley/jsonplaceholder-api-cards)
 * [Построение таблицы из данных с api(фильтрация данных, добавление новой строки, появление инофрмации при клике на строку)](https://bpedley.github.io/frontend-javascript-test/), [код](https://github.com/Bpedley/frontend-javascript-test)
 
