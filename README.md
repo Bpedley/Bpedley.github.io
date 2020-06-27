@@ -7,7 +7,6 @@
 * [Technical Documentation Page](https://bpedley.github.io/FCC/Documentation%20page/index.html), [код](https://github.com/Bpedley/Bpedley.github.io/tree/master/FCC/Documentation%20page)
 
 **Другие проекты:**
-* [Часы](https://bpedley.github.io/Other%20projects/Clocks-JS/), [код](https://github.com/Bpedley/Bpedley.github.io/tree/master/Other%20projects/Clocks-JS)
 * [Погода](https://bpedley.github.io/Other%20projects/Weather%20app/), [код](https://github.com/Bpedley/Bpedley.github.io/tree/master/Other%20projects/Weather%20app)
 * [Поиск википедии](https://bpedley.github.io/Other%20projects/Wikipedia/), [код](https://github.com/Bpedley/Bpedley.github.io/tree/master/Other%20projects/Wikipedia)
 * [Калькулятор](https://bpedley.github.io/Other%20projects/Calculator/), [код](https://github.com/Bpedley/Bpedley.github.io/tree/master/Other%20projects/Calculator)
