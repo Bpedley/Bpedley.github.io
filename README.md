@@ -5,6 +5,7 @@
 * Technical Documentation Page - [демо](https://bpedley.github.io/FCC/Documentation%20page/index.html), [код](https://github.com/Bpedley/Bpedley.github.io/tree/master/FCC/Documentation%20page)
 
 **JavaScript-проекты:**
+* Часы - [демо](https://bpedley.github.io/Other%20projects/Clocks-JS/), [код](https://github.com/Bpedley/Bpedley.github.io/tree/master/Other%20projects/Clocks-JS)
 * Погода - [демо](https://bpedley.github.io/Other%20projects/Weather%20app/), [код](https://github.com/Bpedley/Bpedley.github.io/tree/master/Other%20projects/Weather%20app)
 * Поиск википедии - [демо](https://bpedley.github.io/Other%20projects/Wikipedia/), [код](https://github.com/Bpedley/Bpedley.github.io/tree/master/Other%20projects/Wikipedia)
 * Калькулятор - [демо](https://bpedley.github.io/Other%20projects/Calculator/), [код](https://github.com/Bpedley/Bpedley.github.io/tree/master/Other%20projects/Calculator)
