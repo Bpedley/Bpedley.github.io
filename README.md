@@ -1,5 +1,3 @@
-*Все проекты хостятся на GitHub Pages*
-
 **FreeCodeCamp сертификат адаптивного веб-дизайна**
 * Tribute Page - [демо](https://bpedley.github.io/FCC/Tribute%20page/), [код](https://github.com/Bpedley/Bpedley.github.io/tree/master/FCC/Tribute%20page)
 * Survey Form - [демо](https://bpedley.github.io//FCC/Survey%20page/), [код](https://github.com/Bpedley/Bpedley.github.io/tree/master/FCC/Survey%20page)
