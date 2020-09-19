@@ -1,4 +1,4 @@
-**FreeCodeCamp сертификат адаптивного веб-дизайна**
+**FreeCodeCamp сертификат адаптивного веб-дизайна:**
 * Tribute Page - [демо](https://bpedley.github.io/FCC/Tribute%20page/), [код](https://github.com/Bpedley/Bpedley.github.io/tree/master/FCC/Tribute%20page)
 * Survey Form - [демо](https://bpedley.github.io//FCC/Survey%20page/), [код](https://github.com/Bpedley/Bpedley.github.io/tree/master/FCC/Survey%20page)
 * Product Landing Page - [демо](https://bpedley.github.io//FCC/Product%20page/), [код](https://github.com/Bpedley/Bpedley.github.io/tree/master/FCC/Product%20page)
@@ -26,7 +26,7 @@
 * Построение таблицы из данных с api - фильтрация данных, добавление новой строки, инофрмация при клике на строку (react, react-tables) - [демо](https://bpedley.github.io/frontend-javascript-test/), [код](https://github.com/Bpedley/frontend-javascript-test)
 * Shopping cart (react, react-router, redux, localStorage) - [демо](http://bpedley.github.io/shopping-cart), [код](https://github.com/Bpedley/shopping-cart)
 
-**Full stack open**
+**Full stack open:**
 * Часть 1-2 React, Communicating with server (react) - [код](https://github.com/Bpedley/fullstackopen)
 * Часть 3 Programming a server with NodeJS and Express (node.js, express, mongodb) - [демо](https://limitless-atoll-76582.herokuapp.com/), [код](https://github.com/Bpedley/part3_phonebook)
 
