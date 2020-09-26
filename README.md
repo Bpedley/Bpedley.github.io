@@ -29,5 +29,6 @@
 **Full stack open:**
 * Часть 1-2 React, Communicating with server (react) - [код](https://github.com/Bpedley/fullstackopen)
 * Часть 3 Programming a server with NodeJS and Express (node.js, express, mongodb) - [демо](https://limitless-atoll-76582.herokuapp.com/), [код](https://github.com/Bpedley/part3_phonebook)
+* Часть 4 Testing Express servers, user administration (node.js, express, mongodb, jest) - [код](https://github.com/Bpedley/part4_blog)
 
 **[Решение алгоритмических задач и кода по React, Redux и т.д.](https://github.com/Bpedley/JS-exercises)**
