@@ -31,5 +31,6 @@
 * Часть 3 Programming a server with NodeJS and Express (node.js, express, mongodb) - [демо](https://limitless-atoll-76582.herokuapp.com/), [код](https://github.com/Bpedley/part3_phonebook)
 * Часть 4 Testing Express servers, user administration (node.js, express, mongodb, jest) - [код](https://github.com/Bpedley/part4_blog)
 * Часть 5 Testing React apps (react, jest, cypress) - [код](https://github.com/Bpedley/part5_bloglist)
+* Часть 6 State management with Redux (react, redux) - [код](https://github.com/Bpedley/fullstackopen-part6)
 
 **[Решение алгоритмических задач и кода по React, Redux и т.д.](https://github.com/Bpedley/JS-exercises)**
